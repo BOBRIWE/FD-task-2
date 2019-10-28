@@ -1,0 +1,17 @@
+{
+  "name": "FD-task-2",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "bobrovice <kirill.madze@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "normalize.css": "^8.0.1",
+    "parcel-bundler": "^1.12.4",
+    "pug": "^2.0.4",
+    "sass": "^1.23.1"
+  },
+  "scripts": {
+    "dev": "parcel public/*.pug",
+    "build": "parcel build *.pug"
+  }
+}

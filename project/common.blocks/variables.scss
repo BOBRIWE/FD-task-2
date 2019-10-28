@@ -1,0 +1,36 @@
+$darkShade100: #1F2041;
+$darkShade75: rgba(31, 32, 65, 0.75);
+$darkShade50: rgba(31, 32, 65, 0.50);
+$darkShade25: rgba(31, 32, 65, 0.25);
+$darkShade5: rgba(31, 32, 65, 0.05);
+
+$purple: #BC9CFF;
+$green: #6FCF97;
+
+.darkShade100-bg {
+  background-color: $darkShade100;
+}
+
+.darkShade75-bg {
+  background-color: $darkShade75;
+}
+
+.darkShade50-bg {
+  background-color: $darkShade50;
+}
+
+.darkShade25-bg {
+  background-color: $darkShade25;
+}
+
+.darkShade5-bg {
+  background-color: $darkShade5;
+}
+
+.purple-bg {
+  background-color: $purple;
+}
+
+.green-bg {
+  background-color: $green;
+}

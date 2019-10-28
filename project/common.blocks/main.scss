@@ -1,0 +1,14 @@
+.main {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding-top: 145px;
+
+  &__section-left {
+    padding-left: 150px;
+    height: 100vh;
+  }
+
+  &__section-right {
+    height: 100vh;
+  }
+}
