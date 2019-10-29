@@ -2,7 +2,8 @@ import $ from 'jquery';
 
 $('.select').each(function() {
     let el = $(this);
-    let selectedId = 0;
+    let selectedId = -1;
+    let placeholder = el.data('placeholder');
     el.attr('tabindex', 0);
 
     let options = $(el.children());
@@ -22,15 +23,17 @@ $('.select').each(function() {
     options.appendTo(optContainer);
     optContainer.appendTo(el);
 
-    let selected = $('<div class="select__selected"></div>');
-    changeSelected(selectedId);
+    let selected = $(`<input disabled class="select__selected-input" type="text" placeholder="${placeholder}"/>`);
     selected.appendTo(el);
+
+    let button = $('<div class="select__button"></div>');
+    button.appendTo(el);
 
     el.on('click', function (e) {
         show();
     });
 
-    el.on('focusout', function () {
+    el.on('focusout', function (e) {
         hide();
     });
 
@@ -45,6 +48,6 @@ $('.select').each(function() {
     }
 
     function changeSelected(id) {
-        selected.html(options[id].innerHTML);
+        selected.val(options[id].innerHTML);
     }
 });

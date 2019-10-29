@@ -22,13 +22,31 @@
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-  background-image: url('../../images/icons/expand-icon.svg');
-  background-repeat: no-repeat;
-  background-position: right 14px center;
 
   position: relative;
 
-  &__selected {
+  &__button {
+    background-image: url('../../images/icons/expand-icon.svg');
+    background-repeat: no-repeat;
+    background-position: center center;
+
+    height: 42px;
+    width: 44px;
+    position: absolute;
+    top: 0px;
+    right: 0;
+    border-radius: 0 4px 4px 0;
+    background-color: $white;
+    border: none;
+    box-sizing: border-box;
+    outline: none;
+
+    &:hover {
+      background-color: $darkShade5;
+    }
+  }
+
+  &__selected-input {
     position: absolute;
     box-sizing: border-box;
     top: 0;
@@ -38,6 +56,17 @@
     display: flex;
     align-items: center;
     padding-left: 15px;
+    outline: none;
+    border: none;
+    border-radius: 4px;
+
+    &:disabled {
+      background: $white;
+    }
+
+    &::placeholder {
+      color: $darkShade25;
+    }
   }
 
   &__options {
@@ -50,6 +79,8 @@
     border: 1px solid $darkShade50;
     border-radius: 0 0 4px 4px;
     grid-auto-rows: minmax(50px, auto);
+    background-color: $white;
+    z-index: 99;
 
     &__item {
       display: flex;
