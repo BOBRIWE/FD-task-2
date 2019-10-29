@@ -1,0 +1,85 @@
+@import "variables";
+
+.select {
+  outline: none;
+  width: 100%;
+  height: 44px;
+  border: 1px solid $darkShade25;
+  box-sizing: border-box;
+  border-radius: 4px 4px;
+  padding-left: 15px;
+  display: flex;
+  align-items: center;
+
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 18px;
+  color: $darkShade75;
+
+  background-color: $white;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-image: url('../../images/icons/expand-icon.svg');
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+
+  position: relative;
+
+  &__selected {
+    position: absolute;
+    box-sizing: border-box;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding-left: 15px;
+  }
+
+  &__options {
+    position: absolute;
+    display: grid;
+    box-sizing: content-box;
+    top: 42px;
+    left: -1px;
+    width: 100%;
+    border: 1px solid $darkShade50;
+    border-radius: 0 0 4px 4px;
+    grid-auto-rows: minmax(50px, auto);
+
+    &__item {
+      display: flex;
+      align-items: center;
+      padding-left: 15px;
+
+      &:hover {
+        background-color: $darkShade5;
+      }
+    }
+
+    &--hidden {
+      display: none;
+    }
+  }
+
+  &--active {
+    border-radius: 4px 4px 0 0;
+  }
+
+  &:hover {
+    border: 1px solid $darkShade50;
+    cursor: pointer;
+  }
+
+  &:focus {
+    border: 1px solid $darkShade50
+  }
+
+  &::placeholder {
+    color: $darkShade25;
+  }
+}

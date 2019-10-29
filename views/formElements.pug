@@ -1,0 +1,35 @@
+doctype html
+html(lang="")
+    head
+        link(rel="stylesheet", href="index.css")
+    body
+        div(class="logo")
+        main(class="form-elements")
+            section
+                div(class="input-container")
+                    div(class="input-container__header")
+                        span Text Field
+                    div(class="input-container__caption")
+                        span Default
+                    input(class="input input-container__input" type="email" placeholder="Email")
+                div(class="input-container")
+                    div(class="input-container__header")
+                        span Text Field
+                    div(class="input-container__caption")
+                        span Hover / Focus
+                    input(class="input input-container__input" autofocus="true" type="text" placeholder="Email" value="This is pretty awesome")
+                div(class="input-container")
+                    div(class="input-container__header")
+                        span Dropdown
+                    div(class="input-container__caption")
+                        span Default
+                    div(class="select input-container__input")
+                        span Option 1
+                        span Option 2
+                        span Option 3
+            section
+
+            section
+            section
+            section
+        script(src="bundle.js")
