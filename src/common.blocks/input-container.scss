@@ -2,13 +2,28 @@
 
 .input-container {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  height: 67px;
-  margin-bottom: 20px;
+  grid-auto-columns: auto;
+  position: relative;
+  row-gap: 5px;
 
   &__input {
     grid-column-start: 1;
     grid-column-end: 3;
+  }
+
+  &__button {
+    width: 44px;
+    height: 44px;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    background-image: url('../../images/icons/arrow-forward.svg');
+    background-repeat: no-repeat;
+    background-position: center center;
+    cursor: pointer;
+    &:hover {
+      background-color: $darkShade5;
+    }
   }
 
   &__header {

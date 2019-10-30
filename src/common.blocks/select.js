@@ -2,7 +2,7 @@ import $ from 'jquery';
 
 $('.select').each(function() {
     let el = $(this);
-    let selectedId = -1;
+    let selectedId = el.data('selected');
     let placeholder = el.data('placeholder');
     el.attr('tabindex', 0);
 
@@ -26,6 +26,10 @@ $('.select').each(function() {
     let selected = $(`<input disabled class="select__selected-input" type="text" placeholder="${placeholder}"/>`);
     selected.appendTo(el);
 
+    if(selectedId !== undefined) {
+        changeSelected(selectedId);
+    }
+
     let button = $('<div class="select__button"></div>');
     button.appendTo(el);
 
@@ -48,6 +52,7 @@ $('.select').each(function() {
     }
 
     function changeSelected(id) {
+        el.attr('data-selected', selectedId);
         selected.val(options[id].innerHTML);
     }
 });
