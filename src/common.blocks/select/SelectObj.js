@@ -1,4 +1,4 @@
-class Select {
+class SelectObj {
     constructor(selectedId = -1) {
         this._values = [];
         this._cb = null;
@@ -30,4 +30,4 @@ class Select {
     }
 }
 
-export default Select;
+export default SelectObj;

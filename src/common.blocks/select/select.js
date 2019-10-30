@@ -1,5 +1,5 @@
 import $ from 'jquery';
-import Select from './Select';
+import SelectObj from './SelectObj';
 import RichOption from "./RichOption";
 
 $('.select').each(function() {
@@ -26,7 +26,7 @@ $('.select').each(function() {
         baseQuantity = 0;
     }
 
-    const select = new Select(el.data('selected'));
+    const select = new SelectObj(el.data('selected'));
     select.onSelectedChanged((val, id) => {
         el.attr('data-selected', id);
 
