@@ -11,17 +11,47 @@
     border: none;
   }
 
-  &-other-month > a {
+  &-other-month > a, &-other-month > span {
     color: $darkShade25 !important;
   }
 
   &-today {
-    background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
-    & a {
+
+    & a, span {
+      border-radius: 20px;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
       font-weight: bold !important;
       color: $white !important;
     }
   }
+
+  &-range {
+    &-item {
+      background: linear-gradient(180deg, rgba(188, 156, 255, 0.25) 0%, rgba(139, 164, 249, 0.25) 100%);
+    }
+
+    &-start, &-end {
+      background: linear-gradient(180deg, rgba(188, 156, 255, 0.25) 0%, rgba(139, 164, 249, 0.25) 100%);
+      border-radius: 20px 0 0 20px;
+
+      & > a {
+        background: linear-gradient(180deg, rgb(188, 156, 255) 0%, rgb(139, 164, 249) 100%);
+        color: $white !important;
+        font-weight: bold !important;
+      }
+    }
+
+    &-end {
+      border-radius: 0 20px 20px 0;
+    }
+  }
+
+
 
   &-calendar {
     display: flex;
@@ -34,7 +64,7 @@
       box-sizing: border-box;
       padding: 0 19px 20px 19px;
 
-      & a {
+      & a, span {
         font-family: Montserrat;
         font-style: normal;
         font-weight: normal;
@@ -52,12 +82,21 @@
           display: flex;
           align-items: center;
           justify-content: center;
-          border-radius: 20px;
 
-          &:hover {
-            background-color: $darkShade5;
-            cursor: pointer;
+          & > a {
+            display: flex;
+            width: 100%;
+            height: 100%;
+            align-items: center;
+            justify-content: center;
+            border-radius: 20px;
+            &:hover {
+              background-color: $darkShade5;
+              cursor: pointer;
+            }
           }
+
+
         }
       }
     }
@@ -76,7 +115,7 @@
       & > tr {
         display: grid;
         grid-template-columns: repeat(7, 40px);
-        padding: 0 0 20px 20px;
+        padding: 0 19px 10px 19px;
       }
 
       & > th {
@@ -100,7 +139,7 @@
     grid-template-columns: 20px auto 20px;
     padding: 0 20px;
     margin-top: 20px;
-    margin-bottom: 30px;
+    margin-bottom: 35px;
   }
 
   &-prev {
