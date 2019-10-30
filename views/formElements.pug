@@ -92,5 +92,31 @@ html(lang="")
                         span(data-quantity="2") Спальни
                         span(data-quantity="2") Кровати
                         span Ванные
+                ul(class="expandable-list")
+                    li(class="expandable-list__header")
+                        span(class="expandable-list__title") expandable checkbox list
+                    li
+                        input(class="checkbox" type="checkbox" id="check1")
+                        label(class="label" for="check1") Завтрак
+                    li
+                        input(class="checkbox" type="checkbox" id="check2")
+                        label(class="label" for="check2") Завтрак 2
+                    li
+                        input(class="checkbox" type="checkbox" id="check3")
+                        label(class="label" for="check3") Завтрак 3
+                ul(class="expandable-list" data-expanded="true")
+                    li(class="expandable-list__header")
+                        span(class="expandable-list__title") expandable checkbox list
+                    li
+                        input(class="checkbox" type="checkbox" id="check4")
+                        label(class="label" for="check4") Завтрак
+                    li
+                        input(class="checkbox" type="checkbox" id="check5")
+                        label(class="label" for="check5") Завтрак 2
+                    li
+                        input(class="checkbox" type="checkbox" id="check6")
+                        label(class="label" for="check6") Завтрак 3
+
+
             section
         script(src="bundle.js")
