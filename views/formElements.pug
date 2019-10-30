@@ -32,7 +32,7 @@ html(lang="")
                         span Masked text field
                     div(class="input-container__caption")
                         span Default
-                    input(class="input input-date input-container__input" placeholder="ДД.ММ.ГГГГ")
+                    input(readonly class="input input-date input-container__input" placeholder="ДД.ММ.ГГГГ")
                 div(class="two-inputs-container")
                     div(class="input-container")
                         div(class="input-container__header")
@@ -65,5 +65,32 @@ html(lang="")
 
             section
             section
+                div(class="input-container")
+                    div(class="input-container__header")
+                        span Dropdown
+                    div(class="input-container__caption")
+                        span Default
+                    div(class="select input-container__input" data-isrich="true")
+                        span(data-quantity="2") Спальни
+                        span(data-quantity="2") Кровати
+                        span Ванные
+                div(class="input-container")
+                    div(class="input-container__header")
+                        span Dropdown
+                    div(class="input-container__caption")
+                        span Expanded
+                    div(class="select input-container__input" data-isrich="true" data-expanded="true")
+                        span(data-quantity="2") Спальни
+                        span(data-quantity="2") Кровати
+                        span Ванные
+                div(class="input-container")
+                    div(class="input-container__header")
+                        span Dropdown
+                    div(class="input-container__caption")
+                        span Expanded
+                    div(class="select input-container__input" data-isrich="true")
+                        span(data-quantity="2") Спальни
+                        span(data-quantity="2") Кровати
+                        span Ванные
             section
         script(src="bundle.js")
