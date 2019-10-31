@@ -74,6 +74,9 @@ html(lang="")
                         span(data-quantity="2") Спальни
                         span(data-quantity="2") Кровати
                         span Ванные
+                        div(class="select__controls")
+                            div(class="select__controls__clear") Очистить
+                            div(class="select__controls__apply") Применить
                 div(class="input-container")
                     div(class="input-container__header")
                         span Dropdown
@@ -92,6 +95,29 @@ html(lang="")
                         span(data-quantity="2") Спальни
                         span(data-quantity="2") Кровати
                         span Ванные
+
+            section
+                div(class="input-container")
+                    div(class="input-container__header")
+                        span Date Dropdown
+                    div(class="select input-container__input" data-placeholder="Сколько гостей" data-selected=0 data-expanded="true" data-isrich="true" data-istotal="true" data-total-val="Гостя")
+                        span Взрослые
+                        span Дети
+                        span Младенцы
+                        div(class="select__controls")
+                            div(class="select__controls__apply") Применить
+            section
+                div(class="input-container")
+                    div(class="input-container__header")
+                        span Date Dropdown
+                    div(class="select input-container__input" data-placeholder="Сколько гостей" data-selected=0 data-expanded="true" data-isrich="true" data-istotal="true" data-total-val="Гостя")
+                        span(data-quantity="2") Взрослые
+                        span(data-quantity="1") Дети
+                        span Младенцы
+                        div(class="select__controls")
+                            div(class="select__controls__clear") Очистить
+                            div(class="select__controls__apply") Применить
+            section
                 ul(class="expandable-list")
                     li(class="expandable-list__header")
                         span(class="expandable-list__title") expandable checkbox list
@@ -118,20 +144,27 @@ html(lang="")
                         label(class="label" for="check6") Стул для кормления
                     li
                         input(checked class="checkbox" type="checkbox" id="check7")
-                        label(class="label" for="check6") Кроватка
+                        label(class="label" for="check7") Кроватка
                     li
                         input(class="checkbox" type="checkbox" id="check8")
-                        label(class="label" for="check7") Телевизор
+                        label(class="label" for="check8") Телевизор
                     li
                         input(class="checkbox" type="checkbox" id="check9")
-                        label(class="label" for="check8") Шампунь
+                        label(class="label" for="check9") Шампунь
                     li
                         input(class="checkbox" type="checkbox" id="check10")
                         label(class="label" for="check10") Телевизор
                     li
                         input(class="checkbox" type="checkbox" id="check11")
                         label(class="label" for="check11") Шампунь
-
-
             section
+                h3(class="h3 h3--dark") rich Checkbox Buttons
+
+                input(class="checkbox" type="checkbox" id="check12")
+                label(class="label label--highlight" for="check12") Широкий коридор
+                    span(class="label__caption") Ширина коридоров в номере не менее 91 см.
+
+                input(class="checkbox" type="checkbox" id="check13")
+                label(class="label label--highlight" for="check13") Помощник для инвалидов
+                    span(class="label__caption") На 1 этаже вас встретит специалист  и проводит до номера.
         script(src="bundle.js")

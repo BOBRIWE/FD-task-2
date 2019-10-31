@@ -14,6 +14,9 @@ $('.select').each(function() {
     let button = $('<div class="select__button"></div>');
     let isRich = !!el.data('isrich');
     let isExpanded = !!el.data('expanded');
+    let isTotal = !!el.data('istotal');
+    let totalVal = el.data('total-val') || '';
+
     let richOptions = [];
     let baseQuantity = null;
 
@@ -30,17 +33,41 @@ $('.select').each(function() {
     select.onSelectedChanged((val, id) => {
         el.attr('data-selected', id);
 
-        let output = val.getValue;
+        let output = '';
 
         if (isRich) {
             let itemsForOutput = [];
             richOptions.forEach((item) => {
                 if (item.hasQuantity()) {
-                    itemsForOutput.push(item.getValue);
+                    itemsForOutput.push(item);
                 }
             });
 
-            output = itemsForOutput.join(', ');
+            let valuesToJoin = [];
+
+            itemsForOutput.forEach((value, i) => {
+                if (!isTotal) {
+                    valuesToJoin.push(value.getQuantity);
+                    valuesToJoin.push(value.getValue);
+                }else {
+                    if (valuesToJoin.length === 0) valuesToJoin.push(0);
+
+                    valuesToJoin[0] += value.getQuantity;
+                }
+            });
+
+            if (isTotal && valuesToJoin[0] > 0) {
+                valuesToJoin.push(totalVal);
+                output = valuesToJoin.join(' ');
+            }else {
+                for (let i = 0; i < valuesToJoin.length - 1; i+=2) {
+                    output += `${valuesToJoin[i]} ${valuesToJoin[i+1]}`;
+                    if (i+1 !== valuesToJoin.length -1) {
+                        output += ', ';
+                    }
+                }
+
+            }
         }
 
         selected.val(output);

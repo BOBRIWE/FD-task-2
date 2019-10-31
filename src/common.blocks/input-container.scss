@@ -2,9 +2,10 @@
 
 .input-container {
   display: grid;
-  grid-auto-columns: auto;
+  grid-template-columns: 1fr;
   position: relative;
   row-gap: 5px;
+  height: fit-content;
 
   &__input {
     grid-column-start: 1;

@@ -6,9 +6,7 @@ class RichOption {
     }
 
     get getValue() {
-        if (this._quantity === null) return this._value;
-
-        return `${this._quantity} ${this._value}`;
+        return this._value;
     }
 
     get getQuantity() {

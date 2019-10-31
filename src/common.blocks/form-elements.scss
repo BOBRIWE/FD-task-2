@@ -3,11 +3,14 @@
   grid-template-columns: repeat(3, minmax(200px, 1fr));
   padding-top: 141px;
   padding-left: 140px;
+  padding-bottom: 140px;
   row-gap: 100px;
+  column-gap: 146px;
 
   & > section {
     display: grid;
     grid-auto-rows: auto;
     row-gap: 20px;
+    height: fit-content;
   }
 }
