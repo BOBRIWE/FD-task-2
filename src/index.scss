@@ -1,3 +1,10 @@
+@import '../node_modules/normalize.css/normalize';
+@import '../node_modules/jquery-ui/themes/base/slider';
+
+@import 'common.blocks/variables';
+
+@import 'common.blocks/fonts';
+
 @import 'common.blocks/info-block';
 @import 'common.blocks/section';
 @import 'common.blocks/main';
@@ -20,10 +27,9 @@
 @import 'common.blocks/toggle';
 @import 'common.blocks/like-button';
 @import 'common.blocks/rate-button';
+@import 'common.blocks/range-slider';
 
 
-@import 'common.blocks/variables';
 
-@import 'common.blocks/fonts';
 
-@import '../node_modules/normalize.css/normalize';
+
