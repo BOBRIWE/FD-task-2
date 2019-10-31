@@ -1,0 +1,32 @@
+@import "variables";
+
+.radio {
+  display: none;
+
+  & + label {
+    position: relative;
+    left: 30px;
+
+    &:before {
+      content: '';
+      display: inline-block;
+      position: absolute;
+      left: -30px;
+      top: 0;
+      width: 20px;
+      height: 20px;
+      border-radius: 10px;
+      border: 1px solid $darkShade25;
+      grid-row: 1;
+    }
+  }
+
+  &:checked + label {
+    &:before {
+      border: 1px solid $purple;
+      background-image: url('../../images/icons/dot.svg');
+      background-repeat: no-repeat;
+      background-position: center center;
+    }
+  }
+}
