@@ -1,6 +1,6 @@
 @import '../node_modules/normalize.css/normalize';
 @import '../node_modules/jquery-ui/themes/base/slider';
-@import '../node_modules/paginationjs/dist/pagination';
+//@import '../node_modules/paginationjs/dist/pagination';
 
 @import 'common.blocks/variables';
 
@@ -32,6 +32,10 @@
 @import 'common.blocks/button';
 @import 'common.blocks/link';
 @import 'common.blocks/pagination/pagination';
+@import 'common.blocks/info-box';
+@import 'common.blocks/comment';
+
+@import 'common.blocks/special-for-comment';
 
 
 

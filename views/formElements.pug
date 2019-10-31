@@ -221,6 +221,7 @@ html(lang="")
                     li
                         input(class="checkbox" type="checkbox" id="check11")
                         label(class="label" for="check11") Шампунь
+
             section
                 h3(class="h3 h3--dark") rich Checkbox Buttons
 
@@ -231,10 +232,37 @@ html(lang="")
                 input(class="checkbox" type="checkbox" id="check13")
                 label(class="label label--highlight" for="check13") Помощник для инвалидов
                     span(class="label__caption") На 1 этаже вас встретит специалист  и проводит до номера.
+
+
             section
                 h3(class="h3 h3--dark") bullet list
                 ul(class="bullet-list")
                     li Нельзя с питомцами
                     li Без вечеринок и мероприятий
                     li Время прибытия — после 13:00, а выезд до 12:00
+            section
+                div(class="info-box")
+                    div(class="info-box__image" )
+                        img(src="./images/smile.svg")
+                    div(class="info-box__header")
+                        span(class="info-box__title") Комфорт
+                        span(class="info-box__text") Шумопоглощающие стены
+                div(class="info-box")
+                    div(class="info-box__image" )
+                        img(src="./images/building.svg")
+                    div(class="info-box__header")
+                        span(class="info-box__title") Удобство
+                        span(class="info-box__text") Окно в каждой из спален
+            section(class="special-for-comment")
+                div(class="comment")
+                    div(class="comment__avatar")
+                        img(src="./images/avatar.png")
+                    div(class="comment__header")
+                        span(class="comment__title") Мурад Сарафанов
+                        span(class="comment__date") 5 дней назад
+                    div(class="comment__like")
+                        input(class="like-button" checked type="checkbox" id="like111" data-likes=11)
+                        label(class="label" for="like111") 11
+                    p(class="comment__paragraph") Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.
+            section
         script(src="bundle.js")
