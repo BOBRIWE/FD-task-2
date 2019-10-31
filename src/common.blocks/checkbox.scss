@@ -26,7 +26,20 @@
 
   &:checked + label {
     &:before {
-      border: 1px solid $purple;
+      border: 1px solid transparent;
+      box-shadow: 2px 1000px 1px $white inset;
+      background-image: linear-gradient(
+                      rgba(255, 255, 255, 0),
+                      rgba(255, 255, 255, 0)), $purpleGradient;
+    }
+    &:after {
+      content: '';
+      display: inline-block;
+      position: absolute;
+      left: -30px;
+      top: 0;
+      width: 20px;
+      height: 20px;
       background-image: url('../../images/icons/checkmark.svg');
       background-repeat: no-repeat;
       background-position: center center;
