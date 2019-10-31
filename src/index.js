@@ -4,3 +4,4 @@ require('./common.blocks/expandable-list');
 require('./common.blocks/like-button');
 require('./common.blocks/rate-button');
 require('./common.blocks/range-slider');
+require('./common.blocks/pagination/pagination');

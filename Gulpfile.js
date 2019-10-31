@@ -4,7 +4,8 @@ const gulp = require('gulp');
 const sass = require('gulp-sass');
 const pug = require('gulp-pug');
 const copy = require('gulp-copy');
-const webpack = require('webpack-stream');
+const webpackStream = require('webpack-stream');
+const webpack = require('webpack');
 const connect = require('gulp-connect');
 
 sass.compiler = require('node-sass');
@@ -27,12 +28,19 @@ gulp.task('views', function buildHTML() {
 
 gulp.task('scripts', function() {
     return gulp.src('./src/index.js')
-        .pipe(webpack({
+        .pipe(webpackStream({
             mode: 'development',
             devtool: 'source-map',
             output: {
                 filename: 'bundle.js'
-            }
+            },
+            plugins: [
+                new webpack.ProvidePlugin({
+                    $: 'jquery',
+                    jQuery: 'jquery',
+                    'window.jQuery': 'jquery'
+                }),
+            ]
         }))
         .pipe(gulp.dest('dist/'))
         .pipe(connect.reload());

@@ -637,6 +637,13 @@ body@^5.1.0:
     raw-body "~1.1.0"
     safe-json-parse "~1.0.1"
 
+bootpag@^1.0.7:
+  version "1.0.7"
+  resolved "https://registry.yarnpkg.com/bootpag/-/bootpag-1.0.7.tgz#f16c3ae224564aaed158538954a6ab611b8c01cd"
+  integrity sha1-8Ww64iRWSq7RWFOJVKarYRuMAc0=
+  dependencies:
+    jquery ">=1.6"
+
 brace-expansion@^1.1.7:
   version "1.1.11"
   resolved "https://registry.yarnpkg.com/brace-expansion/-/brace-expansion-1.1.11.tgz#3c7fcbf529d87226f3d2f52b966ff5271eb441dd"
@@ -2562,7 +2569,7 @@ jquery-ui@^1.12.1:
   resolved "https://registry.yarnpkg.com/jquery-ui/-/jquery-ui-1.12.1.tgz#bcb4045c8dd0539c134bc1488cdd3e768a7a9e51"
   integrity sha1-vLQEXI3QU5wTS8FIjN0+dop6nlE=
 
-jquery@>=1.7.2, jquery@>=1.8, jquery@^3.4.1:
+jquery@>=1.6, jquery@>=1.7.2, jquery@>=1.8, jquery@^3.4.1:
   version "3.4.1"
   resolved "https://registry.yarnpkg.com/jquery/-/jquery-3.4.1.tgz#714f1f8d9dde4bdfa55764ba37ef214630d80ef2"
   integrity sha512-36+AdBzCL+y6qjw5Tx7HgzeGCzC81MDDgaUP8ld2zhx58HdqXGoBd+tHdrBMiyjGQs0Hxs/MLZTu/eHNJJuWPw==
@@ -3411,6 +3418,11 @@ p-try@^2.0.0:
   version "2.2.0"
   resolved "https://registry.yarnpkg.com/p-try/-/p-try-2.2.0.tgz#cb2868540e313d61de58fafbe35ce9004d5540e6"
   integrity sha512-R4nPAVTAU0B9D35/Gk3uJf/7XYbQcyohSKdvAxIRSNghFl4e71hVoGnBNQz9cWaXxO2I10KTC+3jMdvvoKw6dQ==
+
+paginationjs@^2.1.4:
+  version "2.1.4"
+  resolved "https://registry.yarnpkg.com/paginationjs/-/paginationjs-2.1.4.tgz#f973eaea5c36c2beef4a4e6ee2b94df7f44b941d"
+  integrity sha512-A4V7YGOXDMIbUtiGdrmYTvnxxU+JTzg1Ktxd9Z+uSDOt9OxK9FfOlzAFKPNVnZDKKAm8lzFeSxVpTb+pGNWOxA==
 
 pako@~1.0.5:
   version "1.0.10"
@@ -5058,7 +5070,7 @@ webpack-stream@^5.2.1:
     vinyl "^2.1.0"
     webpack "^4.26.1"
 
-webpack@^4.26.1:
+webpack@^4.26.1, webpack@^4.41.2:
   version "4.41.2"
   resolved "https://registry.yarnpkg.com/webpack/-/webpack-4.41.2.tgz#c34ec76daa3a8468c9b61a50336d8e3303dce74e"
   integrity sha512-Zhw69edTGfbz9/8JJoyRQ/pq8FYUoY0diOXqW0T6yhgdhCv6wr0hra5DwwWexNRns2Z2+gsnrNcbe9hbGBgk/A==
