@@ -1,0 +1,118 @@
+@import "../variables";
+
+.order-card {
+  width: 380px;
+  height: fit-content;
+
+  background: $white;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  box-sizing: border-box;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+
+  padding: 40px 30px;
+
+  display: grid;
+  row-gap: 20px;
+
+  &__price {
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 24px;
+    color: $darkShade75;
+
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    height: fit-content;
+
+    &__summary {
+      width: fit-content;
+
+      &__right {
+        grid-column: 3;
+      }
+
+      &__space {
+        grid-column: 2;
+        border-bottom: 1px dotted $darkShade25;
+      }
+    }
+
+
+    &--header {
+      font-family: Quicksand;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 19px;
+      line-height: 24px;
+      color: $darkShade100;
+    }
+
+
+    &--right {
+      display: flex;
+      justify-self: flex-end;
+      grid-column: 2;
+    }
+
+    &--info {
+      display: flex;
+      position: relative;
+      width: fit-content;
+
+      &:after {
+        content: '';
+        width: 20px;
+        height: 20px;
+        position: absolute;
+        top: 0;
+        right: -23px;
+        background-image: url('./../../images/icons/info.svg');
+
+        &:hover {
+          cursor: pointer;
+        }
+      }
+    }
+  }
+
+  &__main-price {
+
+  }
+
+  &__order {
+    font-size: 24px;
+    line-height: 30px;
+
+  }
+
+  &__header {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    height: fit-content;
+
+    &__title {
+      font-family: Quicksand;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 14px;
+      line-height: 30px;
+      color: $darkShade100;
+    }
+
+    &__caption {
+      font-family: Montserrat;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 14px;
+      line-height: 18px;
+      color: $darkShade50;
+
+      display: flex;
+      justify-self: flex-end;
+      align-items: center;
+    }
+  }
+}

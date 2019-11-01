@@ -1,4 +1,9 @@
 include ../common.blocks/find-room-card/find-room-card
+include ../common.blocks/registration-card/registration-card
+include ../common.blocks/datepicker/datepicker-example
+include ../common.blocks/order-card/order-card
+include ../common.blocks/login-card/login-card
+include ../common.blocks/product-card/product-card
 
 doctype html
 html(lang="")
@@ -7,7 +12,25 @@ html(lang="")
     body
         div(class="logo")
         main(class="cards")
-            +find-room-card
+            section
+                +find-room-card
+                +registration-card
+            section
+                +order-card
+                +login-card
+            section
+                +datepicker-example
+                +product-card({
+                    imagePath: './images/sofa1.png',
+                    rating: 5,
+                    isLux: true,
+                    reviewsCount: 145
+                })
+                +product-card({
+                    imagePath: './images/sofa2.png',
+                    rating: 4,
+                    reviewsCount: 65
+                })
 
 
 

@@ -33,9 +33,10 @@ $('.select').each(function() {
     select.onSelectedChanged((val, id) => {
         el.attr('data-selected', id);
 
-        let output = '';
+        let output = val.getValue;
 
         if (isRich) {
+            output = '';
             let itemsForOutput = [];
             richOptions.forEach((item) => {
                 if (item.hasQuantity()) {
@@ -72,6 +73,7 @@ $('.select').each(function() {
 
         selected.val(output);
     });
+
 
     options.each(function (i) {
         const element = $(this);

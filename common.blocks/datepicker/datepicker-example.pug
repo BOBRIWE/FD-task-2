@@ -1,0 +1,104 @@
+mixin datepicker-example
+
+    #ui-datepicker-div.ui-datepicker.ui-widget.ui-widget-content.ui-helper-clearfix.ui-corner-all(style='width: 320px; height: 369;')
+        .ui-datepicker-header.ui-widget-header.ui-helper-clearfix.ui-corner-all
+            a.ui-datepicker-prev.ui-corner-all(data-handler='prev', data-event='click', title='Prev')
+                span.ui-icon.ui-icon-circle-triangle-w Prev
+            a.ui-datepicker-next.ui-corner-all(data-handler='next', data-event='click', title='Next')
+                span.ui-icon.ui-icon-circle-triangle-e Next
+            .ui-datepicker-title
+                span.ui-datepicker-month November
+                span.ui-datepicker-year 2019
+        table.ui-datepicker-calendar
+            thead
+                tr
+                    th.ui-datepicker-week-end(scope='col')
+                        span(title='Sunday') Su
+                    th(scope='col')
+                        span(title='Monday') Mo
+                    th(scope='col')
+                        span(title='Tuesday') Tu
+                    th(scope='col')
+                        span(title='Wednesday') We
+                    th(scope='col')
+                        span(title='Thursday') Th
+                    th(scope='col')
+                        span(title='Friday') Fr
+                    th.ui-datepicker-week-end(scope='col')
+                        span(title='Saturday') Sa
+            tbody
+                tr
+                    td.ui-datepicker-week-end.ui-datepicker-other-month(data-handler='selectDay', data-event='click', data-month='9', data-year='2019')
+                        a.ui-state-default.ui-priority-secondary(href='#') 27
+                    td.ui-datepicker-other-month(data-handler='selectDay', data-event='click', data-month='9', data-year='2019')
+                        a.ui-state-default.ui-priority-secondary(href='#') 28
+                    td.ui-datepicker-other-month(data-handler='selectDay', data-event='click', data-month='9', data-year='2019')
+                        a.ui-state-default.ui-priority-secondary(href='#') 29
+                    td.ui-datepicker-other-month(data-handler='selectDay', data-event='click', data-month='9', data-year='2019')
+                        a.ui-state-default.ui-priority-secondary(href='#') 30
+                    td.ui-datepicker-other-month(data-handler='selectDay', data-event='click', data-month='9', data-year='2019')
+                        a.ui-state-default.ui-priority-secondary(href='#') 31
+                    td.ui-datepicker-days-cell-over.ui-datepicker-today(data-handler='selectDay', data-event='click', data-month='10', data-year='2019')
+                        a.ui-state-default.ui-state-highlight(href='#') 1
+                    td.ui-datepicker-week-end(data-handler='selectDay', data-event='click', data-month='10', data-year='2019')
+                        a.ui-state-default(href='#') 2
+                tr
+                    td.ui-datepicker-week-end(data-handler='selectDay', data-event='click', data-month='10', data-year='2019')
+                        a.ui-state-default(href='#') 3
+                    td.ui-datepicker-range-start(data-handler='selectDay', data-event='click', data-month='10', data-year='2019')
+                        a.ui-state-default(href='#') 4
+                    td.ui-datepicker-range-item(data-handler='selectDay', data-event='click', data-month='10', data-year='2019')
+                        a.ui-state-default(href='#') 5
+                    td.ui-datepicker-range-item(data-handler='selectDay', data-event='click', data-month='10', data-year='2019')
+                        a.ui-state-default(href='#') 6
+                    td.ui-datepicker-range-item(data-handler='selectDay', data-event='click', data-month='10', data-year='2019')
+                        a.ui-state-default(href='#') 7
+                    td.ui-datepicker-range-item(data-handler='selectDay', data-event='click', data-month='10', data-year='2019')
+                        a.ui-state-default(href='#') 8
+                    td.ui-datepicker-week-end.ui-datepicker-range-item(data-handler='selectDay', data-event='click', data-month='10', data-year='2019')
+                        a.ui-state-default(href='#') 9
+                tr
+                    td.ui-datepicker-week-end.ui-datepicker-range-end(data-handler='selectDay', data-event='click', data-month='10', data-year='2019')
+                        a.ui-state-default(href='#') 10
+                    td(data-handler='selectDay', data-event='click', data-month='10', data-year='2019')
+                        a.ui-state-default(href='#') 11
+                    td(data-handler='selectDay', data-event='click', data-month='10', data-year='2019')
+                        a.ui-state-default(href='#') 12
+                    td(data-handler='selectDay', data-event='click', data-month='10', data-year='2019')
+                        a.ui-state-default(href='#') 13
+                    td(data-handler='selectDay', data-event='click', data-month='10', data-year='2019')
+                        a.ui-state-default(href='#') 14
+                    td(data-handler='selectDay', data-event='click', data-month='10', data-year='2019')
+                        a.ui-state-default(href='#') 15
+                    td.ui-datepicker-week-end(data-handler='selectDay', data-event='click', data-month='10', data-year='2019')
+                        a.ui-state-default(href='#') 16
+                tr
+                    td.ui-datepicker-week-end(data-handler='selectDay', data-event='click', data-month='10', data-year='2019')
+                        a.ui-state-default(href='#') 17
+                    td(data-handler='selectDay', data-event='click', data-month='10', data-year='2019')
+                         a.ui-state-default(href='#') 18
+                    td(data-handler='selectDay', data-event='click', data-month='10', data-year='2019')
+                        a.ui-state-default(href='#') 19
+                    td(data-handler='selectDay', data-event='click', data-month='10', data-year='2019')
+                        a.ui-state-default(href='#') 20
+                    td(data-handler='selectDay', data-event='click', data-month='10', data-year='2019')
+                        a.ui-state-default(href='#') 21
+                    td(data-handler='selectDay', data-event='click', data-month='10', data-year='2019')
+                        a.ui-state-default(href='#') 22
+                    td.ui-datepicker-week-end(data-handler='selectDay', data-event='click', data-month='10', data-year='2019')
+                        a.ui-state-default(href='#') 23
+                tr
+                    td.ui-datepicker-week-end(data-handler='selectDay', data-event='click', data-month='10', data-year='2019')
+                        a.ui-state-default(href='#') 24
+                    td(data-handler='selectDay', data-event='click', data-month='10', data-year='2019')
+                        a.ui-state-default(href='#') 25
+                    td(data-handler='selectDay', data-event='click', data-month='10', data-year='2019')
+                        a.ui-state-default(href='#') 26
+                    td(data-handler='selectDay', data-event='click', data-month='10', data-year='2019')
+                        a.ui-state-default(href='#') 27
+                    td(data-handler='selectDay', data-event='click', data-month='10', data-year='2019')
+                        a.ui-state-default(href='#') 28
+                    td(data-handler='selectDay', data-event='click', data-month='10', data-year='2019')
+                        a.ui-state-default(href='#') 29
+                    td.ui-datepicker-week-end(data-handler='selectDay', data-event='click', data-month='10', data-year='2019')
+                        a.ui-state-default(href='#') 30
