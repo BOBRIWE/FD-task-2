@@ -42,7 +42,7 @@ html(lang="")
                     )
                 +input-container({header: 'Masked text field', caption: 'Default'})(class="input-date" placeholder="ДД.ММ.ГГГГ")
 
-                div(class="two-inputs-container")
+                div(class="puts-container")
                     +input-container({header: 'Date Dropdown',
                         isCustom: true,
                         customValues: [
@@ -92,7 +92,7 @@ html(lang="")
                 +checkbox({value: 'Можно пригласить гостей (до 10 человек)', id: 'id3', isChecked: true})
 
                 +h3({value: 'Radio Buttons', isDark: true})
-                div(class="two-inputs-container")
+                div(class="two-child-container")
                     +radio({value: 'Мужчина', id: 'g1'})(name='g' checked)
                     +radio({value: 'Женщина', id: 'g2'})(name='g')
 
@@ -101,12 +101,12 @@ html(lang="")
                 +toggle({value: 'Получать спецпредложения', id: 'tg2'})
 
                 +h3({value: 'Like button', isDark: true})
-                div(class="two-inputs-container")
+                div(class="two-child-container")
                     +like-button({value: 1, id: 'like1'})(data-likes=1)
                     +like-button({value: 11, id: 'like2'})(data-likes=11 checked)
 
                 +h3({value: 'Rate button', isDark: true})
-                div(class="two-inputs-container")
+                div(class="two-child-container")
                     +rate-button({id: 4})
                     +rate-button({id: 5})
             section
@@ -115,13 +115,13 @@ html(lang="")
                 })(class='range-slider')
 
                 +h3({value: 'buttons', isDark: true})
-                div(class="two-inputs-container")
+                div(class="two-child-container")
                     +button('button')
                     +button('button')
-                div(class="two-inputs-container")
+                div(class="two-child-container")
                     +button('button')(class="button--empty")
                     +button('button')(class="button--empty")
-                div(class="two-inputs-container")
+                div(class="two-child-container")
                     +link('click me')
                     +link('click me')(href="#")
                 +button('перейти к оплате')(class="button--submit")
