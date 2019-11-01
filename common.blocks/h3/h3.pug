@@ -1,0 +1,5 @@
+mixin h3(options)
+    -
+        let subClass = options.isDark ? "h3--dark" : "h3--light"
+
+    h1(class = 'h3 ' + subClass) #{options.value}

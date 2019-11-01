@@ -1,3 +1,7 @@
+include ../common.blocks/h1/h1
+include ../common.blocks/h2/h2
+include ../common.blocks/h3/h3
+
 doctype html
 html(lang="")
     head
@@ -45,25 +49,25 @@ html(lang="")
             section(class="section__section-right")
                 article(class="info-block info-block--c-gap30")
                     div(class="info-block__shortcut")
-                        h1(class="h1--light") H1
+                        +h1({value: 'H1'})
                     div(class="info-block__paragraph")
-                        h1(class="h1--dark") This one is the sub-section
+                        +h1({isDark: true, value: 'This one is the sub-section'})
                             |
                             br
                             |widget title
                 article(class="info-block info-block--c-gap30")
                     div(class="info-block__shortcut")
-                        h2(class="h2--light") H2
+                        +h2({value: 'H2'})
                     div(class="info-block__paragraph")
-                        h2(class="h2--dark") Next one is the item title inside
+                        +h2({isDark: true, value: 'TNext one is the item title inside'})
                             |
                             br
                             |widgets
                 article(class="info-block info-block--c-gap30")
                     div(class="info-block__shortcut")
-                        h3(class="h3--light") H3
+                        +h3({value: 'H3'})
                     div(class="info-block__paragraph")
-                        h3(class="h3--dark") This is a label or CTA text
+                        +h3({isDark: true, value: 'This is a label or CTA text'})
                 article(class="info-block info-block--c-gap30")
                     div(class="info-block__shortcut") Body
                     div(class="info-block__paragraph") This is the body text which is used for most

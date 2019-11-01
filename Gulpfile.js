@@ -11,7 +11,7 @@ const connect = require('gulp-connect');
 sass.compiler = require('node-sass');
 
 gulp.task('sass', function () {
-    return gulp.src('./src/**/*.scss')
+    return gulp.src('./index.scss')
         .pipe(sass().on('error', sass.logError))
         .pipe(gulp.dest('dist/'))
         .pipe(connect.reload());
@@ -27,7 +27,7 @@ gulp.task('views', function buildHTML() {
 });
 
 gulp.task('scripts', function() {
-    return gulp.src('./src/index.js')
+    return gulp.src('./index.js')
         .pipe(webpackStream({
             mode: 'development',
             devtool: 'source-map',
@@ -52,15 +52,15 @@ gulp.task('copy', function() {
 });
 
 gulp.task('sass:watch', function () {
-    gulp.watch('src/**/*.scss', gulp.series('sass'));
+    gulp.watch(['common.blocks/**/*.scss', 'index.scss'], gulp.series('sass'));
 });
 
 gulp.task('views:watch', function () {
-    gulp.watch('views/*.pug', gulp.series('views'));
+    gulp.watch(['views/*.pug', 'common.blocks/**/*.pug'], gulp.series('views'));
 });
 
 gulp.task('scripts:watch', function () {
-    gulp.watch('src/**/*.js', gulp.series('scripts'));
+    gulp.watch(['common.blocks/**/*.js', 'index.js'], gulp.series('scripts'));
 });
 
 gulp.task('copy:watch', function () {

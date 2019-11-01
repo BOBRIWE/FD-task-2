@@ -1,0 +1,56 @@
+@import "../variables";
+
+.expandable-list {
+  list-style: none;
+  display: grid;
+  row-gap: 10px;
+  padding: 0;
+  margin: 0;
+  height: fit-content;
+
+  &__header {
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 15px;
+    text-transform: uppercase;
+    color: $darkShade100;
+    text-decoration: none;
+
+    align-self: center;
+    display: grid;
+    grid-auto-columns: auto;
+    margin-bottom: 8px;
+  }
+
+  &__title {
+    display: flex;
+    align-items: center;
+  }
+
+  &__button {
+    background-image: url('../../images/icons/expand-icon.svg');
+    background-repeat: no-repeat;
+    background-position: center center;
+
+    width: 15px;
+    height: 15px;
+    padding-right: 22px;
+
+    grid-row: 1;
+    grid-column: 2;
+    display: flex;
+
+    justify-self: end;
+
+    &:hover {
+      cursor: pointer;
+    }
+
+    &--expanded {
+      transform: rotate(180deg);
+    }
+  }
+
+}

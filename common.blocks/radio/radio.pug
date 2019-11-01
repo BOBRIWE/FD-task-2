@@ -1,0 +1,7 @@
+mixin radio(options)
+    -
+        let id = options.id !== undefined ? options.id : ''
+        let value = options.value !== undefined ? options.value : ''
+
+    input(class="radio" type="radio" id=id)&attributes(attributes)
+    label(class="label" for=id) #{value}

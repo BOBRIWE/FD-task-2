@@ -1,0 +1,11 @@
+mixin rate-button(options)
+    -
+        let checkedId = options.id !== undefined ? options.id : 3
+        let i = 1
+
+    select(class="rate-button")
+        while i < 6
+            if i === checkedId
+                option(value=i selected) #{i++}
+            else
+                option(value=i) #{i++}

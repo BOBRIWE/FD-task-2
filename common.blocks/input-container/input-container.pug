@@ -1,0 +1,35 @@
+mixin input-container(options)
+    -
+        let isCustom = !!options.isCustom
+        let isButton = !!options.isButton
+        let isClear = !!options.isClear
+        let isApply = !!options.isApply
+        let customValues = options.customValues || [];
+        let customQuantity = options.customQuantity || [];
+        let classes = "input input-container__input"
+
+
+    div(class="input-container")
+        div(class="input-container__header")
+            span #{options.header}
+        div(class="input-container__caption")
+            span #{options.caption}
+
+        if isCustom
+            div(class=classes)&attributes(attributes)
+                +controls(isClear, isApply)
+                each val, index in customValues
+                    span(data-quantity=customQuantity[index])= val
+
+        else if isButton
+            div(class="input-container__button")
+            input(class="input input-container__input")&attributes(attributes)
+        else
+            input(class=classes)&attributes(attributes)
+
+mixin controls(isClear, isApply)
+    div(class="select__controls")
+        if isClear
+            div(class="select__controls__clear") Очистить
+        if isApply
+            div(class="select__controls__apply") Применить

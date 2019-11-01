@@ -1,0 +1,8 @@
+mixin bullet-list(values)
+
+    -
+        let vals = values || []
+
+    ul(class="bullet-list")
+        each val in vals
+            li= val

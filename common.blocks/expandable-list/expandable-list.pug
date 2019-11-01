@@ -1,0 +1,12 @@
+include ../checkbox/checkbox
+
+mixin expandable-list(name, values)
+    -
+        let vals = values || [];
+
+    ul(class="expandable-list")&attributes(attributes)
+        li(class="expandable-list__header")
+            span(class="expandable-list__title")= name
+        each val, i in vals
+            li
+                +checkbox(val)

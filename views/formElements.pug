@@ -1,3 +1,19 @@
+include ../common.blocks/input-container/input-container
+include ../common.blocks/h3/h3
+include ../common.blocks/checkbox/checkbox
+include ../common.blocks/radio/radio
+include ../common.blocks/toggle/toggle
+include ../common.blocks/like-button/like-button
+include ../common.blocks/rate-button/rate-button
+include ../common.blocks/button/button
+include ../common.blocks/link/link
+include ../common.blocks/pagination/pagination
+include ../common.blocks/expandable-list/expandable-list
+include ../common.blocks/rich-checkbox/rich-checkbox
+include ../common.blocks/bullet-list/bullet-list
+include ../common.blocks/info-box/info-box
+include ../common.blocks/comment/comment
+
 doctype html
 html(lang="")
     head
@@ -6,263 +22,213 @@ html(lang="")
         div(class="logo")
         main(class="form-elements")
             section
-                div(class="input-container")
-                    div(class="input-container__header")
-                        span Text Field
-                    div(class="input-container__caption")
-                        span Default
-                    input(class="input input-container__input" type="email" placeholder="Email")
-                div(class="input-container")
-                    div(class="input-container__header")
-                        span Text Field
-                    div(class="input-container__caption")
-                        span Hover / Focus
-                    input(class="input input-container__input" autofocus="true" type="text" placeholder="Email" value="This is pretty awesome")
-                div(class="input-container")
-                    div(class="input-container__header")
-                        span Dropdown
-                    div(class="input-container__caption")
-                        span Default
-                    div(class="select input-container__input" data-placeholder="Сколько людей")
-                        span Option 1
-                        span Option 2
-                        span Option 3
-                div(class="input-container")
-                    div(class="input-container__header")
-                        span Masked text field
-                    div(class="input-container__caption")
-                        span Default
-                    input(readonly class="input input-date input-container__input" placeholder="ДД.ММ.ГГГГ")
+                +input-container({header: 'Text Field', caption: 'Default'})(type="email" placeholder="Email")
+                +input-container({header: 'Text Field', caption: 'Hover / Focus'})(
+                    autofocus="true"
+                    value="This is pretty awesome"
+                    type="text"
+                    placeholder="Email"
+                    )
+                +input-container({header: 'Dropdown', caption: 'Default',
+                    isCustom: true,
+                    customValues: [
+                        'Option 1',
+                        'Option 2',
+                        'Option 3'
+
+                    ]})(
+                    class="select"
+                    data-placeholder="Сколько людей"
+                    )
+                +input-container({header: 'Masked text field', caption: 'Default'})(class="input-date" placeholder="ДД.ММ.ГГГГ")
+
                 div(class="two-inputs-container")
-                    div(class="input-container")
-                        div(class="input-container__header")
-                            span Date Dropdown
-                        div(class="select input-container__input" data-placeholder="ДД.ММ.ГГГГ")
-                            span 01.02.2019
-                            span 02.02.2019
-                            span 03.02.2019
-                    div(class="input-container")
-                        div(class="input-container__header")
-                            span Date Dropdown
-                        div(class="select input-container__input" data-placeholder="ДД.ММ.ГГГГ" data-selected=0)
-                            span 01.02.2019
-                            span 02.02.2019
-                            span 03.02.2019
-                div(class="input-container")
-                    div(class="input-container__header")
-                        span filter date dropdown
-                    div(class="select input-container__input" data-placeholder="ДД.ММ.ГГГГ" data-selected=0)
-                        span 19 авг - 23 авг
-                        span 19 авг - 23 авг
-                        span 19 авг - 23 авг
-                div(class="input-container")
-                    div(class="input-container__header")
-                        span subscription text field
-                    div(class="input-container__button")
-                    input(class="input input-container__input" type="email" placeholder="Email")
+                    +input-container({header: 'Date Dropdown',
+                        isCustom: true,
+                        customValues: [
+                            '01.02.2019',
+                            '02.02.2019',
+                            '03.02.2019'
+                        ]
+                    })(
+                        class="select"
+                        data-placeholder="ДД.ММ.ГГГГ"
+                        )
+
+                    +input-container({
+                        header: 'Date Dropdown',
+                        isCustom: true,
+                        customValues: [
+                            '01.02.2019',
+                            '02.02.2019',
+                            '03.02.2019'
+                        ]
+                    })(
+                        class="select"
+                        data-placeholder="ДД.ММ.ГГГГ"
+                    )
+                +input-container({
+                    header: 'filter date dropdown',
+                    isCustom: true,
+                    customValues: [
+                        '19 авг - 23 авг',
+                        '19 авг - 23 авг',
+                        '19 авг - 23 авг'
+                    ]
+                })(
+                    class="select"
+                    data-placeholder="ДД.ММ.ГГГГ"
+                )
+
+                +input-container({header: 'subscription text field', isButton: true})(
+                    type="email"
+                    placeholder="Email"
+                )
 
             section
-                h3(class="h3 h3--dark") Checkbox Buttons
-                input(class="checkbox" type="checkbox" id="id1")
-                label(class="label" for="id1") Можно курить
-                input(checked class="checkbox" type="checkbox" id="id2")
-                label(class="label" for="id2") Можно с питомцами
-                input(checked class="checkbox" type="checkbox" id="id3")
-                label(class="label" for="id3") Можно пригласить гостей (до 10 человек)
+                +h3({value: 'Checkbox Buttons', isDark: true})
+                +checkbox({value: 'Можно курить', id: 'id1'})
+                +checkbox({value: 'Можно с питомцами', id: 'id2', isChecked: true})
+                +checkbox({value: 'Можно пригласить гостей (до 10 человек)', id: 'id3', isChecked: true})
 
-                h3(class="h3 h3--dark") Radio Buttons
+                +h3({value: 'Radio Buttons', isDark: true})
                 div(class="two-inputs-container")
-                    input(checked class="radio" name="g" type="radio" id="id11")
-                    label(class="label" for="id11") Мужчина
-                    input(class="radio" name="g" type="radio" id="id21")
-                    label(class="label" for="id21") Женщина
+                    +radio({value: 'Мужчина', id: 'g1'})(name='g' checked)
+                    +radio({value: 'Женщина', id: 'g2'})(name='g')
 
-                h3(class="h3 h3--dark") Toggle
-                input(checked class="toggle" type="checkbox" id="id111")
-                label(class="label" for="id111") Получать спецпредложения
-                input(class="toggle" type="checkbox" id="id222")
-                label(class="label" for="id222") Получать спецпредложения
+                +h3({value: 'Toggle', isDark: true}) Toggle
+                +toggle({value: 'Получать спецпредложения', id: 'tg1'})(checked)
+                +toggle({value: 'Получать спецпредложения', id: 'tg2'})
 
-                h3(class="h3 h3--dark") Like button
-                div
-                    input(class="like-button" type="checkbox" id="like1" data-likes=1)
-                    label(class="label" for="like1") 1
-                    input(checked class="like-button" type="checkbox" id="like2" data-likes=11)
-                    label(class="label" for="like2") 11
-
-                h3(class="h3 h3--dark") Rate button
+                +h3({value: 'Like button', isDark: true})
                 div(class="two-inputs-container")
-                    select(class="rate-button")
-                        option(value=1) 1
-                        option(value=2) 2
-                        option(value=3) 3
-                        option(value=4 selected) 4
-                        option(value=5) 5
-                    select(class="rate-button")
-                        option(value=1) 1
-                        option(value=2) 2
-                        option(value=3) 3
-                        option(value=4) 4
-                        option(value=5 selected) 5
+                    +like-button({value: 1, id: 'like1'})(data-likes=1)
+                    +like-button({value: 11, id: 'like2'})(data-likes=11 checked)
 
-            section
-                div(class="input-container")
-                    div(class="input-container__header")
-                        span Range slider
-                    div(class="input-container__caption")
-                        span 5000 - 10000Р
-                    div(class="range-slider input-container__input")
-
-                h3(class="h3 h3--dark") buttons
+                +h3({value: 'Rate button', isDark: true})
                 div(class="two-inputs-container")
-                    button(class="button") button
-                    button(class="button") button
+                    +rate-button({id: 4})
+                    +rate-button({id: 5})
+            section
+                +input-container({header: 'Range slider', caption: '5000 - 10000Р',
+                    isCustom: true
+                })(class='range-slider')
+
+                +h3({value: 'buttons', isDark: true})
                 div(class="two-inputs-container")
-                    button(class="button button--empty") button
-                    button(class="button button--empty") button
+                    +button('button')
+                    +button('button')
                 div(class="two-inputs-container")
-                    a(class="link") click me
-                    a(class="link" href="#") click me
-                button(class="button button--submit") перейти к оплате
-                h3(class="h3 h3--dark") pagination
-                div(class="pagination" data-max=100 data-current=1)
-                    span(class="pagination__caption") 1 – 12 из 100+ вариантов аренды
+                    +button('button')(class="button--empty")
+                    +button('button')(class="button--empty")
+                div(class="two-inputs-container")
+                    +link('click me')
+                    +link('click me')(href="#")
+                +button('перейти к оплате')(class="button--submit")
+                +h3({value: 'pagination', isDark: true})
+                +pagination('1 – 12 из 100+ вариантов аренды')(data-max=100 data-current=1)
 
             section
-                div(class="input-container")
-                    div(class="input-container__header")
-                        span Dropdown
-                    div(class="input-container__caption")
-                        span Default
-                    div(class="select input-container__input" data-isrich="true")
-                        span(data-quantity="2") Спальни
-                        span(data-quantity="2") Кровати
-                        span Ванные
-                        div(class="select__controls")
-                            div(class="select__controls__clear") Очистить
-                            div(class="select__controls__apply") Применить
-                div(class="input-container")
-                    div(class="input-container__header")
-                        span Dropdown
-                    div(class="input-container__caption")
-                        span Expanded
-                    div(class="select input-container__input" data-isrich="true" data-expanded="true")
-                        span(data-quantity="2") Спальни
-                        span(data-quantity="2") Кровати
-                        span Ванные
-                div(class="input-container")
-                    div(class="input-container__header")
-                        span Dropdown
-                    div(class="input-container__caption")
-                        span Expanded
-                    div(class="select input-container__input" data-isrich="true")
-                        span(data-quantity="2") Спальни
-                        span(data-quantity="2") Кровати
-                        span Ванные
+                +input-container({header: 'Dropdown', caption: 'Default',
+                    isCustom: true,
+                    customValues: [
+                        'Спальни',
+                        'Кровати',
+                        'Ванные'
+                    ],
+                    customQuantity: [
+                        2, 2
+                    ],
+                    isApply: true,
+                    isClear: true
+                })(class="select" data-isrich="true")
 
-            section
-                div(class="input-container")
-                    div(class="input-container__header")
-                        span Date Dropdown
-                    div(class="select input-container__input" data-placeholder="Сколько гостей" data-selected=0 data-expanded="true" data-isrich="true" data-istotal="true" data-total-val="Гостя")
-                        span Взрослые
-                        span Дети
-                        span Младенцы
-                        div(class="select__controls")
-                            div(class="select__controls__apply") Применить
-            section
-                div(class="input-container")
-                    div(class="input-container__header")
-                        span Date Dropdown
-                    div(class="select input-container__input" data-placeholder="Сколько гостей" data-selected=0 data-expanded="true" data-isrich="true" data-istotal="true" data-total-val="Гостя")
-                        span(data-quantity="2") Взрослые
-                        span(data-quantity="1") Дети
-                        span Младенцы
-                        div(class="select__controls")
-                            div(class="select__controls__clear") Очистить
-                            div(class="select__controls__apply") Применить
-            section
-                ul(class="expandable-list")
-                    li(class="expandable-list__header")
-                        span(class="expandable-list__title") expandable checkbox list
-                    li
-                        input(class="checkbox" type="checkbox" id="check1")
-                        label(class="label" for="check1") Завтрак
-                    li
-                        input(class="checkbox" type="checkbox" id="check2")
-                        label(class="label" for="check2") Завтрак 2
-                    li
-                        input(class="checkbox" type="checkbox" id="check3")
-                        label(class="label" for="check3") Завтрак 3
-                ul(class="expandable-list" data-expanded="true")
-                    li(class="expandable-list__header")
-                        span(class="expandable-list__title") expandable checkbox list
-                    li
-                        input(class="checkbox" type="checkbox" id="check4")
-                        label(class="label" for="check4") Завтрак
-                    li
-                        input(checked class="checkbox" type="checkbox" id="check5")
-                        label(class="label" for="check5") Письменный стол
-                    li
-                        input(checked class="checkbox" type="checkbox" id="check6")
-                        label(class="label" for="check6") Стул для кормления
-                    li
-                        input(checked class="checkbox" type="checkbox" id="check7")
-                        label(class="label" for="check7") Кроватка
-                    li
-                        input(class="checkbox" type="checkbox" id="check8")
-                        label(class="label" for="check8") Телевизор
-                    li
-                        input(class="checkbox" type="checkbox" id="check9")
-                        label(class="label" for="check9") Шампунь
-                    li
-                        input(class="checkbox" type="checkbox" id="check10")
-                        label(class="label" for="check10") Телевизор
-                    li
-                        input(class="checkbox" type="checkbox" id="check11")
-                        label(class="label" for="check11") Шампунь
-
-            section
-                h3(class="h3 h3--dark") rich Checkbox Buttons
-
-                input(class="checkbox" type="checkbox" id="check12")
-                label(class="label label--highlight" for="check12") Широкий коридор
-                    span(class="label__caption") Ширина коридоров в номере не менее 91 см.
-
-                input(class="checkbox" type="checkbox" id="check13")
-                label(class="label label--highlight" for="check13") Помощник для инвалидов
-                    span(class="label__caption") На 1 этаже вас встретит специалист  и проводит до номера.
+                +input-container({header: 'Dropdown', caption: 'Expanded',
+                    isCustom: true,
+                    customValues: [
+                        'Спальни',
+                        'Кровати',
+                        'Ванные'
+                    ],
+                    customQuantity: [
+                        2, 2
+                    ],
+                    isApply: true,
+                    isClear: true
+                })(class="select" data-isrich="true" data-expanded="true")
 
 
             section
-                h3(class="h3 h3--dark") bullet list
-                ul(class="bullet-list")
-                    li Нельзя с питомцами
-                    li Без вечеринок и мероприятий
-                    li Время прибытия — после 13:00, а выезд до 12:00
+                +input-container({
+                    header: 'Dropdown',
+                    isCustom: true,
+                    customValues: [
+                        'Взрослые',
+                        'Дети',
+                        'Младенцы'
+                    ],
+                    isApply: true
+                })(class="select" data-placeholder="Сколько гостей" data-selected=0 data-expanded="true" data-isrich="true" data-istotal="true" data-total-val="Гостя")
+
             section
-                div(class="info-box")
-                    div(class="info-box__image" )
-                        img(src="./images/smile.svg")
-                    div(class="info-box__header")
-                        span(class="info-box__title") Комфорт
-                        span(class="info-box__text") Шумопоглощающие стены
-                div(class="info-box")
-                    div(class="info-box__image" )
-                        img(src="./images/building.svg")
-                    div(class="info-box__header")
-                        span(class="info-box__title") Удобство
-                        span(class="info-box__text") Окно в каждой из спален
+                +input-container({
+                    header: 'Dropdown',
+                    isCustom: true,
+                    customValues: [
+                        'Взрослые',
+                        'Дети',
+                        'Младенцы'
+                    ],
+                    customQuantity: [
+                        2, 1
+                    ],
+                    isApply: true,
+                    isClear: true
+                })(class="select" data-placeholder="Сколько гостей" data-selected=0 data-expanded="true" data-isrich="true" data-istotal="true" data-total-val="Гостя")
+
+            section
+                +expandable-list('expandable checkbox list', [
+                    {value: 'Завтрак', id: 'brek1'},
+                    {value: 'Завтрак 2', id: 'brek2', isChecked: true},
+                    {value: 'Завтрак 3', id: 'brek3'}
+                ])
+
+                +expandable-list('expandable checkbox list', [
+                    {value: 'Завтрак', id: 'brek1'},
+                    {value: 'Письменный стол', id: 'brek2', isChecked: true},
+                    {value: 'Стул для кормления', id: 'brek2', isChecked: true},
+                    {value: 'Кроватка', id: 'brek2', isChecked: true},
+                    {value: 'Телевизор', id: 'brek2'},
+                    {value: 'Шампунь', id: 'brek2'},
+                    {value: 'Телевизор', id: 'brek2'},
+                    {value: 'Шампунь', id: 'brek2'},
+                ])(data-expanded="true")
+
+            section
+                +h3({value: 'rich Checkbox Buttons', isDark: true})
+
+                +rich-checkbox({id: 'rich1', value: 'Широкий коридор', caption: 'Ширина коридоров в номере не менее 91 см.'})
+                +rich-checkbox({id: 'rich2',value: 'Помощник для инвалидов', caption: 'На 1 этаже вас встретит специалист  и проводит до номера.'})
+
+            section
+                +h3({value: 'bullet list', isDark: true})
+                +bullet-list([
+                    'Нельзя с питомцами',
+                    'Без вечеринок и мероприятий',
+                    'Время прибытия — после 13:00, а выезд до 12:00'
+                ])
+            section
+                +info-box({header: 'Комфорт', caption: 'Шумопоглощающие стены', imagePath: './images/smile.svg'})
+                +info-box({header: 'Удобство', caption: 'Окно в каждой из спален', imagePath: './images/building.svg'})
+
             section(class="special-for-comment")
-                div(class="comment")
-                    div(class="comment__avatar")
-                        img(src="./images/avatar.png")
-                    div(class="comment__header")
-                        span(class="comment__title") Мурад Сарафанов
-                        span(class="comment__date") 5 дней назад
-                    div(class="comment__like")
-                        input(class="like-button" checked type="checkbox" id="like111" data-likes=11)
-                        label(class="label" for="like111") 11
-                    p(class="comment__paragraph") Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.
+                +comment({
+                    name: 'Мурад Сарафанов',
+                    avatarPath: './images/avatar.png',
+                    time: '5 дней назад',
+                    likes: 11,
+                    checked: true,
+                    message: 'Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.'
+                })
             section
         script(src="bundle.js")

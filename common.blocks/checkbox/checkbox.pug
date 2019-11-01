@@ -1,0 +1,8 @@
+mixin checkbox(options)
+    -
+        let id = options.id !== undefined ? options.id : ''
+        let value = options.value !== undefined ? options.value : ''
+        let isChecked = !!options.isChecked
+
+    input(class="checkbox" type="checkbox" id=id checked=isChecked)
+    label(class="label" for=id) #{value}
