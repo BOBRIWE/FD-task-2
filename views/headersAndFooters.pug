@@ -1,0 +1,11 @@
+include ../common.blocks/nav-bar/nav-bar
+
+doctype html
+html(lang="")
+    head
+        link(rel="stylesheet", href="index.css")
+    body
+        div(class="logo")
+        main(class="headers-footers")
+            +nav-bar({isLogged: false})
+            +nav-bar({isLogged: true, userName: 'Cosmin Negoita'})

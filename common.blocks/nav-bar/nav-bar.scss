@@ -1,0 +1,128 @@
+@import "../variables";
+
+.nav-bar {
+  width: 100%;
+  background: $white;
+  box-shadow: 0 10px 20px $darkShade5;
+
+
+
+  &__container {
+    height: 70px;
+
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    box-sizing: border-box;
+    margin: 0 140px;
+    column-gap: 20px;
+  }
+
+  &__navigation {
+    display: grid;
+    grid-auto-flow: column;
+    width: fit-content;
+    justify-self: flex-end;
+    column-gap: 10px;
+    height: 50%;
+
+    &__item {
+      text-decoration: none;
+
+      font-family: Montserrat;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 14px;
+      line-height: 17px;
+      color: $darkShade50;
+
+      padding: 0 10px;
+
+      display: flex;
+      align-items: center;
+
+      &--expandable {
+        position: relative;
+        padding-right: 30px;
+
+        &:after {
+          content: '';
+          width: 20px;
+          height: 100%;
+          position: absolute;
+
+          background-image: url('../../images/icons/expand-icon.svg');
+          background-repeat: no-repeat;
+          background-position: center center;
+          top: 0;
+          right: 5px;
+        }
+      }
+
+      &--active {
+        font-weight: bold;
+      }
+
+      &:hover {
+        background-color: $darkShade5;
+        border-radius: 4px;
+      }
+    }
+  }
+
+  &__logo {
+    display: grid;
+    grid-auto-flow: column;
+    width: fit-content;
+    grid-auto-columns: auto;
+    align-items: center;
+
+    &__image {
+      height: 40px;
+      width: 40px;
+
+      background-image: url('../../images/icons/logo-colored.svg');
+      background-repeat: no-repeat;
+      background-position: center center;
+    }
+
+    &__title {
+      height: 20px;
+      width: 60px;
+
+      margin-left: 10px;
+
+      background-image: url('../../images/icons/logo-text.svg');
+      background-repeat: no-repeat;
+      background-position: center center;
+    }
+  }
+
+  &__login {
+    justify-self: flex-end;
+    width: fit-content;
+
+    display: grid;
+    grid-auto-flow: column;
+    column-gap: 20px;
+  }
+
+  &__logged {
+    height: 30px;
+    border-left: 1px solid $darkShade10;
+    padding-left: 30px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+  }
+
+  &__username {
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 17px;
+    color: $darkShade50;
+  }
+}

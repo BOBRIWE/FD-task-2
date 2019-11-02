@@ -1,0 +1,22 @@
+include ../button/button
+
+mixin nav-bar(options)
+    header(class="nav-bar")
+        div(class="nav-bar__container")
+            div(class="nav-bar__logo")
+                div(class="nav-bar__logo__image")
+                div(class="nav-bar__logo__title")
+            nav(class="nav-bar__navigation")
+                a(class="nav-bar__navigation__item nav-bar__navigation__item--active" href="#") Home
+                a(class="nav-bar__navigation__item" href="#") About Us
+                a(class="nav-bar__navigation__item nav-bar__navigation__item--expandable" href="#") Services
+                a(class="nav-bar__navigation__item" href="#") Careers
+                a(class="nav-bar__navigation__item" href="#") News
+                a(class="nav-bar__navigation__item" href="#") Documentation
+            if !options.isLogged
+                div(class="nav-bar__login")
+                    +button('login')(class="button--empty")
+                    +button('register')
+            else
+                div(class="nav-bar__logged")
+                    span(class="nav-bar__username")= options.userName
