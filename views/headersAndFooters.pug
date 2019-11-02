@@ -1,4 +1,6 @@
 include ../common.blocks/nav-bar/nav-bar
+include ../common.blocks/footer-with-nav/footer-with-nav
+include ../common.blocks/footer-only-description/footer-only-description
 
 doctype html
 html(lang="")
@@ -9,3 +11,6 @@ html(lang="")
         main(class="headers-footers")
             +nav-bar({isLogged: false})
             +nav-bar({isLogged: true, userName: 'Cosmin Negoita'})
+
+            +footer-with-nav
+            +footer-only-description

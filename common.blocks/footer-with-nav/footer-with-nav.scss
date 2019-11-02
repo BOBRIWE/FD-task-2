@@ -1,0 +1,137 @@
+@import "../variables";
+
+.footer-with-nav {
+  width: 100%;
+  background: $white;
+
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 24px;
+  color: $darkShade75;
+
+  &__footer {
+    height: 70px;
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-columns: 1fr auto;
+    margin: 0 140px;
+    align-items: center;
+
+    &__copyright {
+      font-family: Montserrat;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 14px;
+      line-height: 17px;
+      color: $darkShade75;
+    }
+
+    &__networks {
+      display: grid;
+      grid-auto-flow: column;
+      grid-gap: 20px;
+    }
+  }
+
+
+  &__navigation {
+    display: grid;
+    grid-auto-flow: column;
+    column-gap: 120px;
+
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 17px;
+
+    justify-self: center;
+
+
+    color: $darkShade50;
+
+    &__header {
+      font-family: Montserrat;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 12px;
+      line-height: 15px;
+      text-transform: uppercase;
+      color: $darkShade100;
+    }
+
+    &__block {
+      display: grid;
+      grid-auto-flow: row;
+      row-gap: 20px;
+      height: fit-content;
+    }
+
+    &__item {
+      text-decoration: none;
+
+      font-family: Montserrat;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 14px;
+      line-height: 17px;
+      color: $darkShade50;
+    }
+  }
+
+  &__form {
+    display: grid;
+    grid-auto-flow: row;
+    row-gap: 20px;
+  }
+
+  &__container {
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-columns: 260px 1fr 260px;
+    align-items: start;
+    box-sizing: border-box;
+    margin: 0 140px;
+    column-gap: 40px;
+    box-shadow: 0 1px 0 $darkShade10;
+
+    padding: 110px 0;
+  }
+
+  &__description {
+    display: grid;
+    height: fit-content;
+    grid-auto-flow: row;
+    row-gap: 20px;
+
+    &__logo {
+      display: grid;
+      grid-auto-flow: column;
+      width: fit-content;
+      grid-auto-columns: auto;
+      align-items: center;
+
+      &__image {
+        height: 40px;
+        width: 40px;
+
+        background-image: url('../../images/icons/logo-colored.svg');
+        background-repeat: no-repeat;
+        background-position: center center;
+      }
+
+      &__title {
+        height: 20px;
+        width: 60px;
+
+        margin-left: 10px;
+
+        background-image: url('../../images/icons/logo-text.svg');
+        background-repeat: no-repeat;
+        background-position: center center;
+      }
+    }
+  }
+}
