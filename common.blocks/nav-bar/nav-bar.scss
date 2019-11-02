@@ -1,23 +1,40 @@
 @import "../variables";
 
 .nav-bar {
-  width: 100%;
+  max-width: 100%;
   background: $white;
   box-shadow: 0 10px 20px $darkShade5;
   height: fit-content;
+
+  padding: 0 140px;
+
+  @media (max-width: $laptop-l) {
+    padding: 0 40px;
+  }
+
+  @media (min-width: $mobile) and (max-width: $tablet){
+    padding: 0 20px;
+  }
+
 
 
 
   &__container {
     height: 70px;
+    max-width: 100%;
 
     display: grid;
     grid-auto-flow: column;
     grid-template-columns: auto 1fr auto;
     align-items: center;
     box-sizing: border-box;
-    margin: 0 140px;
     column-gap: 20px;
+
+    @media (max-width: $tablet) {
+      height: auto;
+      padding: 20px 0;
+      grid-template-columns: auto;
+    }
   }
 
   &__navigation {
@@ -27,6 +44,17 @@
     justify-self: flex-end;
     column-gap: 10px;
     height: 50%;
+
+    @media (max-width: $tablet) {
+      display: none;
+    }
+
+    @media (max-width: $laptop) {
+      height: 80%;
+      grid-auto-columns: 1fr;
+      grid-template-rows: 1fr 1fr;
+      row-gap: 10px;
+    }
 
     &__item {
       text-decoration: none;
@@ -39,6 +67,7 @@
       color: $darkShade50;
 
       padding: 0 10px;
+      width: fit-content;
 
       display: flex;
       align-items: center;
@@ -107,6 +136,12 @@
     display: grid;
     grid-auto-flow: column;
     column-gap: 20px;
+
+    @media (max-width: $tablet) {
+      grid-auto-flow: row;
+      row-gap: 20px;
+      justify-items: end;
+    }
   }
 
   &__logged {

@@ -13,6 +13,14 @@ $white: #FFFFFF;
 $purpleGradient: linear-gradient(180deg, rgb(188, 156, 255) 0%, rgb(139, 164, 249) 100%);
 $purpleGradient05: linear-gradient(180deg, rgba(188, 156, 255, 0.5) 0%, rgba(139, 164, 249, 0.5) 100%);
 
+
+$mobile: 320px;
+$tablet: 768px;
+$laptop: 1024px;
+$laptop-l: 1440px;
+$desktop: 1920px;
+
+
 .darkShade100-bg {
   background-color: $darkShade100;
 }

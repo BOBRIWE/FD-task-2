@@ -6,11 +6,12 @@ doctype html
 html(lang="")
     head
         link(rel="stylesheet", href="index.css")
+        meta(name="viewport" content="width=device-width")
     body
         div(class="logo")
         main(class="headers-footers")
             +nav-bar({isLogged: false})
             +nav-bar({isLogged: true, userName: 'Cosmin Negoita'})
-
-            +footer-with-nav
-            +footer-only-description
+            //
+            //+footer-with-nav
+            //+footer-only-description

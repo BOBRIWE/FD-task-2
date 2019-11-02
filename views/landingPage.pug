@@ -1,0 +1,12 @@
+include ../common.blocks/nav-bar/nav-bar
+include ../common.blocks/footer-with-nav/footer-with-nav
+include ../common.blocks/landing-page/landing-page
+
+doctype html
+html(lang="")
+    head
+        link(rel="stylesheet", href="index.css")
+    body
+        +nav-bar({})
+        +landing-page({})
+        +footer-with-nav

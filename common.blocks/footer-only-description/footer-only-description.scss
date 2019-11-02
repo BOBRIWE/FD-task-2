@@ -31,6 +31,10 @@
     box-shadow: 0 1px 0 $darkShade10;
 
     padding: 110px 0;
+
+    @media (min-width: $mobile) and (max-width: $laptop) {
+      margin: 0 10px;
+    }
   }
 
   &__description {

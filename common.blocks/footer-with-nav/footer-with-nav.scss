@@ -19,6 +19,8 @@
     margin: 0 140px;
     align-items: center;
 
+    width: calc(100% - 140px * 2);
+
     &__copyright {
       font-family: Montserrat;
       font-style: normal;
@@ -46,10 +48,7 @@
     font-weight: normal;
     font-size: 14px;
     line-height: 17px;
-
     justify-self: center;
-
-
     color: $darkShade50;
 
     &__header {
@@ -98,6 +97,8 @@
     box-shadow: 0 1px 0 $darkShade10;
 
     padding: 110px 0;
+
+    width: calc(100% - 140px * 2);
   }
 
   &__description {
