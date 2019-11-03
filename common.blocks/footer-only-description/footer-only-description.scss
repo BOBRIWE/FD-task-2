@@ -1,7 +1,6 @@
 @import "../variables";
 
 .footer-only-description {
-  width: 100%;
   background: $white;
 
   box-shadow: 0 10px 20px $darkShade5;
@@ -12,6 +11,12 @@
   font-size: 14px;
   line-height: 24px;
   color: $darkShade75;
+
+  padding: 0 140px;
+
+  @media (max-width: $laptop) {
+    padding: 0 20px;
+  }
 
   &__networks {
     display: grid;
@@ -26,15 +31,15 @@
     align-items: start;
     justify-items: center;
     box-sizing: border-box;
-    margin: 0 140px;
     column-gap: 40px;
     box-shadow: 0 1px 0 $darkShade10;
 
     padding: 110px 0;
 
-    @media (min-width: $mobile) and (max-width: $laptop) {
-      margin: 0 10px;
+    @media (max-width: $laptop) {
+      padding: 20px 0;
     }
+
   }
 
   &__description {
