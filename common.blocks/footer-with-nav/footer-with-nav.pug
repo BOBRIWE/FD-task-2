@@ -1,39 +1,27 @@
 include ../h3/h3
 include ../input-container/input-container
 
-mixin footer-with-nav
+mixin footer-with-nav(options)
     footer(class="footer-with-nav")
         div(class="footer-with-nav__container")
             div(class="footer-with-nav__description")
                 div(class="footer-with-nav__description__logo")
                     div(class="footer-with-nav__description__logo__image")
                     div(class="footer-with-nav__description__logo__title")
-                span(class="footer-with-nav__description__text") Lorem ipsum dolor sit amet consectetur adipiscing elit aliquam eget nullam pellentesque aliquam curabitur cociis.
+                span(class="footer-with-nav__description__text")= options.description
             div(class="footer-with-nav__navigation")
-                nav(class="footer-with-nav__navigation__block")
-                    span(class="footer-with-nav__navigation__header") Navigation
-                    a(class="footer-with-nav__navigation__item" href="#") About Us
-                    a(class="footer-with-nav__navigation__item" href="#") News
-                    a(class="footer-with-nav__navigation__item" href="#") Support
-                    a(class="footer-with-nav__navigation__item" href="#") Products
-                nav(class="footer-with-nav__navigation__block")
-                    span(class="footer-with-nav__navigation__header") ABOUT&nbsp;US
-                    a(class="footer-with-nav__navigation__item" href="#") Who&nbsp;we&nbsp;are
-                    a(class="footer-with-nav__navigation__item" href="#") Our&nbsp;team
-                    a(class="footer-with-nav__navigation__item" href="#") Careers
-                    a(class="footer-with-nav__navigation__item" href="#") Investors
-                nav(class="footer-with-nav__navigation__block")
-                    span(class="footer-with-nav__navigation__header") Support
-                    a(class="footer-with-nav__navigation__item" href="#") Documentation
-                    a(class="footer-with-nav__navigation__item" href="#") Community
-                    a(class="footer-with-nav__navigation__item" href="#") Get in Touch
+                each col in options.links
+                    nav(class="footer-with-nav__navigation__block")
+                        span(class="footer-with-nav__navigation__header")= col.header
+                        each link in col.links
+                            a(class="footer-with-nav__navigation__item" href="#")= link
 
             div(class="footer-with-nav__form")
-                +h3({isDark: true, value: 'Subscribe to our newsletter'})
-                span Receive our latest news and promotions in your inbox!
-                +input-container({isButton: true})(placeholder="Your email address")
+                +h3({isDark: true, value: options.form.header})
+                span= options.form.caption
+                +input-container({isButton: true})(placeholder=options.form.placeholder)
         div(class="footer-with-nav__footer")
-            div(class="footer-with-nav__footer__copyright") Copyright © 2018 Toxin UI Kit. All rights reserved.
+            div(class="footer-with-nav__footer__copyright")= options.copyright
             div(class="footer-with-nav__footer__networks")
                 img(src="./images/icons/twitter.svg")
                 img(src="./images/icons/facebook.svg")

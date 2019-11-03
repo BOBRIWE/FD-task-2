@@ -1,11 +1,12 @@
-mixin footer-only-description
+
+mixin footer-only-description(description)
     footer(class="footer-only-description")
         div(class="footer-only-description__container")
             div(class="footer-only-description__description")
                 div(class="footer-with-nav__description__logo")
                     div(class="footer-with-nav__description__logo__image")
                     div(class="footer-with-nav__description__logo__title")
-                span(class="footer-with-nav__description__text") Lorem ipsum dolor sit amet consectetur adipiscing elit aliquam eget nullam pellentesque aliquam curabitur cociis.
+                span(class="footer-with-nav__description__text")= description
                 div(class="footer-only-description__networks")
                     img(src="./images/icons/twitter.svg")
                     img(src="./images/icons/facebook.svg")

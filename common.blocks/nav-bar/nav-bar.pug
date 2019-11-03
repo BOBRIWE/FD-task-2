@@ -7,16 +7,21 @@ mixin nav-bar(options)
                 div(class="nav-bar__logo__image")
                 div(class="nav-bar__logo__title")
             nav(class="nav-bar__navigation")
-                a(class="nav-bar__navigation__item nav-bar__navigation__item--active" href="#") Home
-                a(class="nav-bar__navigation__item" href="#") About Us
-                a(class="nav-bar__navigation__item nav-bar__navigation__item--expandable" href="#") Services
-                a(class="nav-bar__navigation__item" href="#") Careers
-                a(class="nav-bar__navigation__item" href="#") News
-                a(class="nav-bar__navigation__item" href="#") Documentation
+                each val in options.names
+                    +link(val)
             if !options.isLogged
                 div(class="nav-bar__login")
-                    +button('login')(class="button--empty")
-                    +button('register')
+                    +button(options.loginVal)(class="button--empty")
+                    +button(options.registerVal)
             else
                 div(class="nav-bar__logged")
                     span(class="nav-bar__username")= options.userName
+
+mixin link(options)
+    -
+        let subClasses = '';
+        if (options.isExpandable)
+            subClasses += ' nav-bar__navigation__item--expandable'
+        if (options.isActive)
+            subClasses += ' nav-bar__navigation__item--active'
+    a(class="nav-bar__navigation__item " + subClasses href="#")= options.name

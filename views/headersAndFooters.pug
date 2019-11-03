@@ -10,8 +10,74 @@ html(lang="")
     body
         div(class="logo")
         main(class="headers-footers")
-            +nav-bar({isLogged: false})
-            +nav-bar({isLogged: true, userName: 'Cosmin Negoita'})
+            +nav-bar({
+                isLogged: false,
+                loginVal: 'Login',
+                registerVal: 'Register',
+                names: [
+                    {name: 'Home', isActive: true},
+                    {name: 'About Us'},
+                    {name: 'Services', isExpandable: true},
+                    {name: 'Careers'},
+                    {name: 'News'},
+                    {name: 'Documentation'}
+                ]
+            })
+            +nav-bar({
+                isLogged: true,
+                loginVal: 'Login',
+                registerVal: 'Register',
+                userName: 'Cosmin Negoita',
+                names: [
+                    {name: 'Home', isActive: true},
+                    {name: 'About Us'},
+                    {name: 'Services', isExpandable: true},
+                    {name: 'Careers'},
+                    {name: 'News'},
+                    {name: 'Documentation'}
+                ]
+            })
             //
-            +footer-with-nav
-            +footer-only-description
+            +footer-with-nav({
+                description: 'Lorem ipsum dolor sit amet consectetur adipiscing elit aliquam eget nullam pellentesque aliquam curabitur cociis.',
+                copyright: 'Copyright © 2018 Toxin UI Kit. All rights reserved.',
+                form: {
+                    header: 'SUBSCRIBE TO OUR NEWSLETTER',
+                    caption: 'Receive our latest news and promotions in your inbox!',
+                    placeholder: 'Your email address'
+                },
+                links: [
+                    {
+                        header: 'NAVIGATION',
+                        links: [
+                            'About Us',
+                            'News',
+                            'Support',
+                            'Products',
+                        ]
+                    },
+                    {
+                        header: 'About Us',
+                        links: [
+                            'Who we are',
+                            'Our team',
+                            'Careers',
+                            'Investors',
+                        ]
+                    },
+                    {
+                        header: 'Support',
+                        links: [
+                            'Documentation',
+                            'Community',
+                            'Get in touch',
+                        ]
+                    },
+                ]
+            })
+            +footer-only-description('Lorem ipsum dolor sit amet consectetur adipiscing elit aliquam eget nullam pellentesque aliquam curabitur cociis.')
+
+
+
+
+
