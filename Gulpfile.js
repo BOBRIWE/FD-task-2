@@ -2,6 +2,8 @@
 
 const gulp = require('gulp');
 const sass = require('gulp-sass');
+const cleanCSS = require('gulp-clean-css');
+const sourcemaps = require('gulp-sourcemaps');
 const pug = require('gulp-pug');
 const copy = require('gulp-copy');
 const webpackStream = require('webpack-stream');
@@ -13,6 +15,12 @@ sass.compiler = require('node-sass');
 gulp.task('sass', function () {
     return gulp.src('./index.scss')
         .pipe(sass().on('error', sass.logError))
+        .pipe(sourcemaps.init())
+        .pipe(cleanCSS({
+            rebaseTo: '../../',
+            compatibility: 'ie8'
+        }))
+        .pipe(sourcemaps.write())
         .pipe(gulp.dest('dist/'))
         .pipe(connect.reload());
 });

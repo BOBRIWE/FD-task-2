@@ -3,7 +3,7 @@
   font-style: normal;
   font-weight: bold;
   src: local('Quicksand'),
-  url('../../../fonts/Quicksand/static/Quicksand-Bold.ttf') format('truetype');
+  url('../../fonts/Quicksand/static/Quicksand-Bold.ttf') format('truetype');
 }
 
 @font-face {
@@ -11,7 +11,7 @@
   font-style: normal;
   font-weight: 400;
   src: local('Quicksand'),
-  url('../../../fonts/Quicksand/static/Quicksand-Regular.ttf') format('truetype');
+  url('../../fonts/Quicksand/static/Quicksand-Regular.ttf') format('truetype');
 }
 
 
@@ -20,7 +20,7 @@
   font-style: normal;
   font-weight: normal;
   src: local('Quicksand'),
-  url('../../../fonts/Open Sans/OpenSans-Regular.ttf') format('truetype');
+  url('../../fonts/Open Sans/OpenSans-Regular.ttf') format('truetype');
 }
 
 @font-face {
@@ -28,7 +28,7 @@
   font-style: normal;
   font-weight: bold;
   src: local('Quicksand'),
-  url('../../../fonts/Open Sans/OpenSans-Bold.ttf') format('truetype');
+  url('../../fonts/Open Sans/OpenSans-Bold.ttf') format('truetype');
 }
 
 
@@ -37,7 +37,7 @@
   font-style: normal;
   font-weight: normal;
   src: local('Quicksand'),
-  url('../../../fonts/Montserrat/Montserrat-Regular.ttf') format('truetype');
+  url('../../fonts/Montserrat/Montserrat-Regular.ttf') format('truetype');
 }
 
 @font-face {
@@ -45,5 +45,5 @@
   font-style: normal;
   font-weight: bold;
   src: local('Quicksand'),
-  url('../../../fonts/Montserrat/Montserrat-Bold.ttf') format('truetype');
+  url('../../fonts/Montserrat/Montserrat-Bold.ttf') format('truetype');
 }
