@@ -26,6 +26,7 @@
     "webpack-stream": "^5.2.1"
   },
   "scripts": {
-    "dev": "gulp dev"
+    "dev": "gulp dev",
+    "build": "gulp build"
   }
 }
