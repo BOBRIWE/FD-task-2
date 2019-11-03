@@ -1,0 +1,10 @@
+include ../login-card/login-card
+include ../registration-card/registration-card
+
+mixin sign-in-up(islogin)
+    main(class="sign-in-up")
+        section(class="sign-in-up__card")
+            if islogin
+                +login-card
+            else
+                +registration-card
