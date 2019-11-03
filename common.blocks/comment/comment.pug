@@ -8,5 +8,5 @@ mixin comment(options)
             span(class="comment__title")= options.name
             span(class="comment__date")= options.time
         div(class="comment__like")
-            +like-button({value: options.likes, id: 'like3'})(data-likes=options.likes checked=options.checked)
+            +like-button({value: options.likes, id: options.id || ''})(data-likes=options.likes checked=options.checked)
         p(class="comment__paragraph")= options.message
