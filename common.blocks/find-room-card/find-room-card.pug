@@ -6,23 +6,14 @@ mixin find-room-card
     div(class="find-room-card")&attributes(attributes)
         +h1({value: 'Найдём номера под ваши пожелания', isDark: true})
         div(class="two-child-container")
-            +input-container({header: 'прибытие',
-                isCustom: true,
-                customValues: [
-                    '11.11.2019',
-                    '11.11.2019',
-                    '11.11.2019'
-                ]
-            })(class="select" data-placeholder="ДД.ММ.ГГГГ")
 
-            +input-container({header: 'прибытие',
-                isCustom: true,
-                customValues: [
-                    '11.11.2019',
-                    '11.11.2019',
-                    '11.11.2019'
-                ]
-            })(class="select" data-placeholder="ДД.ММ.ГГГГ")
+            +input-container({
+                header: 'прибытие'
+            })(class="input-date" placeholder="ДД.ММ.ГГГГ")
+
+            +input-container({
+                header: 'выезд'
+            })(class="input-date" placeholder="ДД.ММ.ГГГГ")
 
         +input-container({
             header: 'гости',

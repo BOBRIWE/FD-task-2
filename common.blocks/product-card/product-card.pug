@@ -7,13 +7,13 @@ mixin product-card(options)
         div(class="product-card__info")
             div(class="product-card__header__title")
                 span(class="product-card__n") №
-                span(class="product-card__order") 888
+                span(class="product-card__order")= options.number
                 if options.isLux
                     a(class="link") &nbsp;люкс
             div(class="product-card__price")
                 div(class="product-card__header__caption")
-                    b 9990₽&nbsp;
-                    | в сутки
+                    b= options.price
+                    | ₽&nbsp;в сутки
             div(class="product-card__line")
             div(class="product-card__rate")
                 +rate-button({id: options.rating})

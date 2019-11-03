@@ -1,0 +1,228 @@
+include ../common.blocks/nav-bar/nav-bar
+include ../common.blocks/input-container/input-container
+include ../common.blocks/checkbox/checkbox
+include ../common.blocks/rich-checkbox/rich-checkbox
+include ../common.blocks/h3/h3
+include ../common.blocks/expandable-list/expandable-list
+include ../common.blocks/product-card/product-card
+include ../common.blocks/footer-with-nav/footer-with-nav
+
+doctype html
+html(lang="")
+    head
+        link(rel="stylesheet", href="index.css")
+        meta(name="viewport" content="width=device-width")
+    body
+        +nav-bar({
+            isLogged: false,
+            loginVal: 'войти',
+            registerVal: 'зарегистрироваться',
+            names: [
+                {name: 'О нас'},
+                {name: 'Услуги', isExpandable: true},
+                {name: 'Вакансии'},
+                {name: 'Новости'},
+                {name: 'Соглашения', isExpandable: true}
+            ]
+        })
+
+        main(class="search-room")
+            section(class="search-room__filter")
+                +input-container({
+                    header: 'даты пребывания в отеле',
+                    isCustom: true,
+                    customValues: [
+                        '19 авг - 23 авг',
+                        '19 авг - 23 авг',
+                        '19 авг - 23 авг'
+                    ]
+                })(
+                    class="select"
+                    data-placeholder="ДД.ММ.ГГГГ"
+                    data-selected=0
+                )
+
+                +input-container({
+                    header: 'гости',
+                    isCustom: true,
+                    customValues: [
+                        'Взрослые',
+                        'Дети',
+                        'Младенцы'
+                    ],
+                    customQuantity: [
+                        2, 1
+                    ],
+                    isApply: true
+                })(class="select" data-placeholder="Сколько гостей" data-selected=0 data-isrich="true" data-istotal="true" data-total-val="Гостя")
+
+                +input-container({
+                    header: 'диапазон цены', caption: '5000 - 10000Р',
+                    isCustom: true
+                })(class='range-slider')
+
+                +h3({value: 'Checkbox Buttons', isDark: true})
+                div(class="search-room__filter__section")
+                    +checkbox({id: 'cb1', value: 'Можно курить', isChecked: false})
+                    +checkbox({id: 'cb2', value: 'Можно с питомцами', isChecked: true})
+                    +checkbox({id: 'cb3', value: 'Можно пригласить гостей (до 10 человек)', isChecked: true})
+
+                +h3({value: 'доступность', isDark: true})
+                div(class="search-room__filter__section")
+                    +rich-checkbox({id: 'av1', value: 'Широкий коридор', caption: 'Ширина коридоров в номере не менее 91 см.'})
+                    +rich-checkbox({id: 'av2', value: 'Помощник для инвалидов', caption: 'На 1 этаже вас встретит специалист  и проводит до номера.'})
+
+                +input-container({
+                    header: 'удобства номера', caption: '',
+                    isCustom: true,
+                    customValues: [
+                        'Спальни',
+                        'Кровати',
+                        'Ванные'
+                    ],
+                    customQuantity: [
+                        2, 2
+                    ],
+                    isApply: true,
+                    isClear: true
+                })(class="select" data-isrich="true")
+
+                +expandable-list('expandable checkbox list', [
+                    {value: 'Завтрак', id: 'brek1'},
+                    {value: 'Письменный стол', id: 'brek2', isChecked: true},
+                    {value: 'Стул для кормления', id: 'brek3', isChecked: true},
+                    {value: 'Кроватка', id: 'brek4', isChecked: true},
+                    {value: 'Телевизор', id: 'brek5'},
+                    {value: 'Шампунь', id: 'brek6'},
+                    {value: 'Телевизор', id: 'brek7'},
+                    {value: 'Шампунь', id: 'brek8'},
+                ])
+            section(class="search-room__list")
+                +product-card({
+                    imagePath: './images/sofa1.png',
+                    rating: 5,
+                    number: 888,
+                    price: 9990,
+                    isLux: true,
+                    reviewsCount: 145
+                })
+                +product-card({
+                    imagePath: './images/sofa2.png',
+                    rating: 4,
+                    number: 840,
+                    price: 9900,
+                    reviewsCount: 65
+                })
+                +product-card({
+                    imagePath: './images/image.png',
+                    rating: 3,
+                    number: 980,
+                    price: 8500,
+                    isLux: true,
+                    reviewsCount: 35
+                })
+                +product-card({
+                    imagePath: './images/image 2.png',
+                    rating: 5,
+                    number: 856,
+                    price: 7300,
+                    reviewsCount: 19
+                })
+                +product-card({
+                    imagePath: './images/image-1.png',
+                    rating: 4,
+                    number: 740,
+                    price: 6000,
+                    reviewsCount: 44
+                })
+                +product-card({
+                    imagePath: './images/image-2.png',
+                    rating: 4,
+                    number: 982,
+                    price: 5800,
+                    reviewsCount: 56
+                })
+                +product-card({
+                    imagePath: './images/image-3.png',
+                    rating: 5,
+                    number: 678,
+                    price: 5500,
+                    reviewsCount: 45
+                })
+                +product-card({
+                    imagePath: './images/image-4.png',
+                    rating: 4,
+                    number: 450,
+                    price: 5300,
+                    reviewsCount: 39
+                })
+                +product-card({
+                    imagePath: './images/image-5.png',
+                    rating: 3,
+                    number: 350,
+                    price: 5000,
+                    reviewsCount: 77
+                })
+                +product-card({
+                    imagePath: './images/image-6.png',
+                    rating: 5,
+                    number: 666,
+                    price: 5000,
+                    reviewsCount: 25
+                })
+                +product-card({
+                    imagePath: './images/image-7.png',
+                    rating: 3,
+                    number: 444,
+                    price: 5000,
+                    reviewsCount: 15
+                })
+                +product-card({
+                    imagePath: './images/image-8.png',
+                    rating: 3,
+                    number: 352,
+                    price: 5000,
+                    reviewsCount: 55
+                })
+
+
+        +footer-with-nav({
+            description: 'Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»',
+            copyright: 'Copyright © 2018 Toxin отель. Все права зачищены.',
+            form: {
+                header: 'Подписка',
+                caption: 'Получайте специальные предложения и новости сервиса',
+                placeholder: 'Email'
+            },
+            links: [
+                {
+                    header: 'навигация',
+                    links: [
+                        'О нас',
+                        'Новости',
+                        'Служба поддержки',
+                        'Услуги',
+                    ]
+                },
+                {
+                    header: 'о нас',
+                    links: [
+                        'О сервисе',
+                        'Наша команда',
+                        'Вакансии',
+                        'Инвесторы',
+                    ]
+                },
+                {
+                    header: 'Служба поддержки',
+                    links: [
+                        'Соглашения',
+                        'Сообщества',
+                        'Связь с нами',
+                    ]
+                },
+            ]
+        })
+
+
+        script(src="bundle.js")

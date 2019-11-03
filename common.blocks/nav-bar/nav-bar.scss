@@ -1,7 +1,6 @@
 @import "../variables";
 
 .nav-bar {
-  max-width: 100%;
   background: $white;
   box-shadow: 0 10px 20px $darkShade5;
   height: fit-content;
@@ -20,8 +19,7 @@
 
 
   &__container {
-    height: 70px;
-    max-width: 100%;
+    min-height: 70px;
 
     display: grid;
     grid-auto-flow: column;
@@ -31,9 +29,9 @@
     column-gap: 20px;
 
     @media (max-width: $tablet) {
-      height: auto;
       padding: 20px 0;
-      grid-template-columns: auto;
+      grid-auto-flow: unset;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     }
   }
 
@@ -43,16 +41,18 @@
     width: fit-content;
     justify-self: flex-end;
     column-gap: 10px;
-    height: 50%;
+    height: fit-content;
 
     @media (max-width: $tablet) {
       display: none;
     }
 
     @media (max-width: $laptop) {
-      height: 80%;
-      grid-auto-columns: 1fr;
-      grid-template-rows: 1fr 1fr;
+      width: auto;
+      justify-self: unset;
+      padding: 20px 0;
+      grid-auto-flow: unset;
+      grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
       row-gap: 10px;
     }
 

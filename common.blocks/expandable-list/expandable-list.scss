@@ -43,13 +43,13 @@
     display: flex;
 
     justify-self: end;
-
+    transform: rotate(180deg);
     &:hover {
       cursor: pointer;
     }
 
     &--expanded {
-      transform: rotate(180deg);
+      transform: rotate(0deg);
     }
   }
 
