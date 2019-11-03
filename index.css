@@ -1965,8 +1965,7 @@ div.pagination {
   border-radius: 4px;
   padding: 40px 30px;
   display: grid;
-  row-gap: 20px;
-  justify-self: center; }
+  row-gap: 20px; }
 
 .darkShade100-bg {
   background-color: #1F2041; }
