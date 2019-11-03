@@ -9,25 +9,32 @@
   position: relative;
 
   @media (max-width: $laptop-l) {
-    padding: 20px;
+    padding: 20px 0;
   }
 
-  @media (max-width: $tablet) {
+  @media (max-width: $laptop) {
     column-gap: 0;
     grid-template-columns: 1fr;
     row-gap: 20px;
   }
 
+  &__pagination {
+    position: absolute;
+    bottom: 0;
+    left: calc(50% - 255px / 2 );
+    height: fit-content;
+  }
 
   &__filter {
     display: grid;
     height: fit-content;
     row-gap: 20px;
+    padding: 0 20px;
 
     @media (max-width: $tablet) {
       height: auto;
       background: $white;
-      padding: 20px;
+
       box-shadow: 0 10px 20px $darkShade5;
     }
 
@@ -44,5 +51,7 @@
     column-gap: 12px;
     row-gap: 20px;
     justify-items: center;
+
+    padding-bottom: 50px;
   }
 }

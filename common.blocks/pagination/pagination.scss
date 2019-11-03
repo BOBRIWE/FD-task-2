@@ -2,7 +2,7 @@
 
 div.pagination {
   display: grid;
-  grid-template-rows: 1fr 1fr;
+  grid-template-rows: 1fr;
   height: fit-content;
 }
 
@@ -22,6 +22,10 @@ div.pagination {
     justify-content: center;
     grid-row: 2;
     text-align: center;
+
+    &:empty {
+      display: none;
+    }
   }
 
   &__next {

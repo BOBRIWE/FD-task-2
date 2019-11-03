@@ -6,6 +6,7 @@ include ../common.blocks/h3/h3
 include ../common.blocks/expandable-list/expandable-list
 include ../common.blocks/product-card/product-card
 include ../common.blocks/footer-with-nav/footer-with-nav
+include ../common.blocks/pagination/pagination
 
 doctype html
 html(lang="")
@@ -184,6 +185,8 @@ html(lang="")
                     price: 5000,
                     reviewsCount: 55
                 })
+                div(class="search-room__pagination")
+                    +pagination
 
 
         +footer-with-nav({
