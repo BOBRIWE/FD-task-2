@@ -1,12 +1,19 @@
 include ../common.blocks/nav-bar/nav-bar
 include ../common.blocks/footer-with-nav/footer-with-nav
 include ../common.blocks/landing-page/landing-page
+include ../common.blocks/find-room-card/find-room-card
 
 doctype html
 html(lang="")
     head
         link(rel="stylesheet", href="index.css")
+        meta(name="viewport" content="width=device-width")
     body
         +nav-bar({})
-        +landing-page({})
+        +landing-page({imagePath: "url('./images/bedroom1.png')", caption: 'Лучшие номера для вашей работы, отдыха и просто вдохновения'})
+        div(class="landing-page__form")
+            +find-room-card
         +footer-with-nav
+
+
+        script(src="bundle.js")
