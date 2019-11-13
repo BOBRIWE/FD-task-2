@@ -1,10 +1,10 @@
 include ../like-button/like-button
 
 mixin comment(options)
-    div(class="comment")
+    article(class="comment")
         div(class="comment__avatar")
             img(src=options.avatarPath)
-        div(class="comment__header")
+        header(class="comment__header")
             span(class="comment__title")= options.name
             span(class="comment__date")= options.time
         div(class="comment__like")

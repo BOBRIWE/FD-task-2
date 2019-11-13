@@ -2,12 +2,12 @@ include ../h1/h1
 include ../button/button
 
 mixin login-card
-    div(class="login-card")
+    section(class="login-card")
         +h1({value: 'Войти', isDark: true})
-        div(class="login-card__block")
+        main(class="login-card__block")
             input(class="input" type="text" placeholder="Email")
             input(class="input" type="text" placeholder="Пароль")
-        div(class="login-card__buttons-section")
+        footer(class="login-card__buttons-section")
             +button('войти')(class="button--submit login-card__big-button")
             span(class="login-card__buttons-section__caption") Нет аккаунта на Toxin?
             +button('создать')(class="button--empty login-card__small-button")

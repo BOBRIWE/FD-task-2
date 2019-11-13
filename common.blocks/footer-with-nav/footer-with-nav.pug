@@ -3,26 +3,26 @@ include ../input-container/input-container
 
 mixin footer-with-nav(options)
     footer(class="footer-with-nav")
-        div(class="footer-with-nav__container")
-            div(class="footer-with-nav__description")
-                div(class="footer-with-nav__description__logo")
+        section(class="footer-with-nav__container")
+            article(class="footer-with-nav__description")
+                header(class="footer-with-nav__description__logo")
                     div(class="footer-with-nav__description__logo__image")
                     div(class="footer-with-nav__description__logo__title")
-                span(class="footer-with-nav__description__text")= options.description
-            div(class="footer-with-nav__navigation")
+                p(class="footer-with-nav__description__text")= options.description
+            article(class="footer-with-nav__navigation")
                 each col in options.links
                     nav(class="footer-with-nav__navigation__block")
                         span(class="footer-with-nav__navigation__header")= col.header
                         each link in col.links
                             a(class="footer-with-nav__navigation__item" href="#")= link
 
-            div(class="footer-with-nav__form")
+            footer(class="footer-with-nav__form")
                 +h3({isDark: true, value: options.form.header})
                 span= options.form.caption
                 +input-container({isButton: true})(placeholder=options.form.placeholder)
-        div(class="footer-with-nav__footer")
-            div(class="footer-with-nav__footer__copyright")= options.copyright
-            div(class="footer-with-nav__footer__networks")
+        section(class="footer-with-nav__footer")
+            article(class="footer-with-nav__footer__copyright")= options.copyright
+            footer(class="footer-with-nav__footer__networks")
                 img(src="./images/icons/twitter.svg")
                 img(src="./images/icons/facebook.svg")
                 img(src="./images/icons/instagram.svg")

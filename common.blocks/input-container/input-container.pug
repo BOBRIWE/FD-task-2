@@ -9,10 +9,10 @@ mixin input-container(options)
         let classes = "input input-container__input"
 
 
-    div(class="input-container")
-        div(class="input-container__header")
+    section(class="input-container")
+        header(class="input-container__header")
             span #{options.header}
-        div(class="input-container__caption")
+        main(class="input-container__caption")
             span #{options.caption}
 
         if isCustom

@@ -3,7 +3,7 @@
 .comment {
   display: grid;
   grid-template-rows: auto;
-  grid-template-columns: auto;
+  grid-template-columns: auto 1fr;
   height: fit-content;
   column-gap: 10px;
   row-gap: 10px;

@@ -4,9 +4,9 @@ include ../radio/radio
 include ../toggle/toggle
 
 mixin registration-card
-    div(class="registration-card")
+    section(class="registration-card")
         +h1({value: 'Регистрация аккаунта', isDark: true})
-        div(class="registration-card__block")
+        article(class="registration-card__block")
             input(class="input" type="text" placeholder="Имя")
             input(class="input" type="text" placeholder="Фамилия")
             div(class="two-child-container")
@@ -14,11 +14,11 @@ mixin registration-card
                 +radio({value: 'Женщина', id: 'g2'})(name='g')
 
         +input-container({header: 'дата рождения'})(class='input-date' placeholder='ДД.ММ.ГГГГ')
-        div(class="registration-card__block")
+        article(class="registration-card__block")
             +input-container({header: 'данные для входа в сервис'})(placeholder="Email")
             input(class="input" type="text" placeholder="Пароль")
             +toggle({value: 'Получать спецпредложения', id: 'tg1'})
-        div(class="registration-card__buttons-section")
+        article(class="registration-card__buttons-section")
             +button('перейти к оплате')(class="button--submit registration-card__big-button")
             span(class="registration-card__buttons-section__caption") Уже есть аккаунт на Toxin
             +button('войти')(class="button--empty registration-card__small-button")
