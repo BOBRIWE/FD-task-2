@@ -15,7 +15,7 @@
     "gulp-sass": "^4.0.2",
     "gulp-sourcemaps": "^2.6.5",
     "ion-rangeslider": "^2.3.0",
-    "jquery": "^3.4.1",
+    "jquery": "^3.5.0",
     "jquery-bar-rating": "^1.2.2",
     "jquery-ui": "^1.12.1",
     "lightpick": "^1.4.1",
